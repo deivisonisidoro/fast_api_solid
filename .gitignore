@@ -1,0 +1,31 @@
+# Arquivos gerados pelo Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+
+# Arquivos gerados pelo VS Code
+.vscode/
+*.code-workspace
+
+# Arquivos gerados pelo PyCharm
+.idea/
+
+# Arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados pelo FastAPI
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+*.env
+
+# Arquivos gerados pelo Poetry
+__pypackages__/
+.poetry/
+
+env
