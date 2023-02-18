@@ -4,7 +4,10 @@ from starlette.responses import RedirectResponse
 
 from src.routers import router
 
-app = FastAPI()
+app = FastAPI(
+    title="Anime Search API",
+    version="0.0.1",
+)
 
 origins = ["http://localhost:3000"]
 
