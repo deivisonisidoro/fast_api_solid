@@ -14,16 +14,19 @@ Before getting started, you need to have the following requirements installed on
 1. Clone the repository to your computer.
 2. Navigate to the project directory.
 3. Run the command `docker-compose up` to build and run the Docker image.
-4. Open a web browser and navigate to `http://localhost:8000` to view the project's homepage.
+4. Open a web browser and navigate to `http://localhost:80` to view the project's homepage.
 
-## Project Structure
+## Database Migrations with Alembic
 
-The project is organized as follows:
+This project uses Alembic for database migrations. To generate a new migration script, run the following command:
 
-- `app/`: directory containing the application files.
-- `Dockerfile`: file defining the Docker image for the application.
-- `docker-compose.yml`: file defining the Docker service for the project.
-- `README.md`: file containing project instructions and documentation.
+`docker-compose exec web alembic revision --autogenerate -m "description of migration"`
+
+This will generate a new migration script in the `alembic/versions` directory.
+
+To apply the migration to the database, run the following command:
+
+`docker-compose exec web alembic upgrade head`
 
 ## Contributing
 
@@ -36,6 +39,10 @@ The project is organized as follows:
 ## Code Standardization
 
 This project follows the guidelines of [PEP 8](https://www.python.org/dev/peps/pep-0008/) and uses the [Black](https://github.com/psf/black) tool to maintain consistent code formatting. In addition, it is recommended to use the [PyLint](https://www.pylint.org/) tool for static code analysis.
+
+## API Documentation
+
+The API documentation can be accessed by opening a web browser and navigating to `http://localhost:80/docs`. This will display the Swagger UI where you can view and test the API endpoints.
 
 ## License
 
