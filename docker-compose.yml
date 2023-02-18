@@ -9,13 +9,13 @@ services:
     image: postgres
     restart: always
     ports:
-      - 5435:5432
+      - 5433:5432
     environment:
       POSTGRES_PASSWORD: ${PG_PASSWORD}
       POSTGRES_USER: ${PG_USER}
       POSTGRES_DB: ${PG_DB}
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
@@ -26,3 +26,5 @@ services:
       - 5050:80
     depends_on:
       - postgresql
+volumes:
+  db-data:

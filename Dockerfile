@@ -4,11 +4,14 @@ FROM python:3.9-slim-buster
 # Define o diretório de trabalho do contêiner
 WORKDIR /app
 
-# Copia o arquivo requirements.txt para o contêiner
-COPY requirements.txt .
+# Copia o arquivo Pipfile e Pipfile.lock para o contêiner
+COPY Pipfile Pipfile.lock ./
+
+# Instala o pipenv no contêiner
+RUN pip install pipenv
 
 # Instala as dependências no contêiner
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pipenv install --system --deploy
 
 # Copia os arquivos do projeto para o contêiner
 COPY . .
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 80
 
 # Define o comando que será executado quando o contêiner for iniciado
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "src.server:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
