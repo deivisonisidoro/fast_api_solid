@@ -2,7 +2,7 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from src.models.user import User
+from src.models.user_models import User
 from src.schemas.user_schema import UserCreate, UserUpdate
 
 
