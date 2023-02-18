@@ -14,7 +14,7 @@ Before getting started, you need to have the following requirements installed on
 1. Clone the repository to your computer.
 2. Navigate to the project directory.
 3. Run the command `docker-compose up` to build and run the Docker image.
-4. Open a web browser and navigate to `http://localhost:80` to view the project's homepage.
+4. Open a web browser and navigate to `http://localhost:8000` to view the project's homepage.
 
 ## Database Migrations with Alembic
 
@@ -42,7 +42,15 @@ This project follows the guidelines of [PEP 8](https://www.python.org/dev/peps/p
 
 ## API Documentation
 
-The API documentation can be accessed by opening a web browser and navigating to `http://localhost:80/docs`. This will display the Swagger UI where you can view and test the API endpoints.
+The API documentation can be accessed by opening a web browser and navigating to `http://localhost:8000/docs` or `http://localhost:8000/redoc`. This will display the Swagger UI or ReDoc where you can view and test the API endpoints.
+
+## Testing
+
+This project uses pytest for testing. To run the tests, run the following command:
+
+`docker-compose exec web pytest`
+
+This will run all the tests in the `tests` directory.
 
 ## License
 
