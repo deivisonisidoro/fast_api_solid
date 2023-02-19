@@ -8,13 +8,23 @@ Before getting started, you need to have the following requirements installed on
 
 - Docker
 - Docker Compose
+- Pipenv
 
 ## Running the Project
 
 1. Clone the repository to your computer.
 2. Navigate to the project directory.
-3. Run the command `docker-compose up` to build and run the Docker image.
-4. Open a web browser and navigate to `http://localhost:8000` to view the project's homepage.
+3. Run the command `pipenv install` to install the required Python dependencies.
+4. Run the command `docker-compose up` to build and run the Docker image.
+5. Open a web browser and navigate to `http://localhost:8000` to view the project's homepage.
+
+### Viewing Logs
+
+To view the logs for the web service, you can use the following command:
+
+`docker-compose logs -f web`
+
+This will show you the logs for the web service in real time.
 
 ## Database Migrations with Alembic
 
