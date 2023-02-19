@@ -1,5 +1,6 @@
 import os
 import sys
+from contextlib import contextmanager
 from typing import Any, Generator
 
 import pytest
@@ -30,6 +31,7 @@ def start_application():
     return app
 
 
+@contextmanager
 @pytest.fixture
 def db():
     session = SessionTesting()
