@@ -10,6 +10,10 @@ Before getting started, you need to have the following requirements installed on
 - Docker Compose
 - Pipenv
 
+## Using Environment Variables
+
+This project relies on environment variables to be set in a .env file. To set up the necessary environment variables, create a copy of the `.env.example` file and rename it to `.env`. Then, fill in the values for each variable.
+
 ## Running the Project
 
 1. Clone the repository to your computer.
