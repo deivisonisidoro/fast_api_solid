@@ -66,7 +66,7 @@ class UserController:
         return updated_user
 
     @staticmethod
-    @router.delete("/{user_id}", status_code=status.HTTP_200_OK)
+    @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
     async def delete_user(user_id: int, db: Session = Depends(get_db)):
         user_service = UserRepository(db)
         db_user = user_service.get_user_by_id(user_id)
