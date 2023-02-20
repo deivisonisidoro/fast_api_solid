@@ -1,14 +1,22 @@
-from typing import List
+from typing import List, Optional
 
 from sqlalchemy.orm import Session
 
 from src.models.user_models import User
+from src.providers.password_manager import PasswordManager
 from src.schemas.user_schema import UserCreate, UserUpdate
 
+from .iuser_repository import IUserRepository
 
-class UserRepository:
-    def __init__(self, db: Session):
+
+class UserRepository(IUserRepository):
+    def __init__(
+        self,
+        db: Session,
+        password_manager: Optional[PasswordManager] = None,
+    ):
         self.db = db
+        self.password_manager = password_manager if password_manager else PasswordManager()
 
     def create_user(self, user: UserCreate) -> User:
         db_user = User(name=user.name, email=user.email, password=user.password)
@@ -29,7 +37,9 @@ class UserRepository:
     def update_user(self, user: User, user_update: UserUpdate) -> User:
         user.name = user_update.name or user.name
         user.email = user_update.email or user.email
-        user.password = user_update.password or user.password
+
+        if user_update.password:
+            user.password = self.password_manager.hash_generate(user_update.password)
         self.db.commit()
         self.db.refresh(user)
         return user
