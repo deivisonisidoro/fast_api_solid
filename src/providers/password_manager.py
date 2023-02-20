@@ -1,6 +1,6 @@
 from passlib.context import CryptContext
 
-from .ipassword_manager import IPasswordManager
+from .interfaces.ipassword_manager import IPasswordManager
 
 
 class PasswordManager(IPasswordManager):

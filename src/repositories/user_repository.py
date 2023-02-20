@@ -6,7 +6,7 @@ from src.models.user_models import User
 from src.providers.password_manager import PasswordManager
 from src.schemas.user_schema import UserCreate, UserUpdate
 
-from .iuser_repository import IUserRepository
+from .interfaces.iuser_repository import IUserRepository
 
 
 class UserRepository(IUserRepository):
