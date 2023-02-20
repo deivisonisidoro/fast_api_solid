@@ -7,10 +7,12 @@ from src.config.database import get_db
 from src.repositories.user_repository import UserRepository
 from src.schemas.user_schema import UserCreate, UserOut, UserUpdate
 
+from .iuser_controller import IUserController
+
 router = APIRouter()
 
 
-class UserController:
+class UserController(IUserController):
     def __init__(self):
         self.router = APIRouter()
 
