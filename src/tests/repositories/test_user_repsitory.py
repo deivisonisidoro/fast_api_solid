@@ -11,7 +11,7 @@ class TestUserRepository:
         assert user.id is not None
         assert user.name == user_data["name"]
         assert user.email == user_data["email"]
-        # assert user.password != user_data["password"]
+        assert user.password != user_data["password"]
 
     def test_get_user_by_id(self, db: Session, user_data: dict):
         user_repo = UserRepository(db)
@@ -21,7 +21,7 @@ class TestUserRepository:
         assert retrieved_user.id == user.id
         assert retrieved_user.name == user.name
         assert retrieved_user.email == user.email
-        # assert retrieved_user.password != user.password
+        assert retrieved_user.password == user.password
 
     def test_get_user_by_email(self, db: Session, user_data: dict):
         user_repo = UserRepository(db)
@@ -31,8 +31,7 @@ class TestUserRepository:
         assert retrieved_user.id == user.id
         assert retrieved_user.name == user.name
         assert retrieved_user.email == user.email
-
-    #     assert retrieved_user.password != user.password
+        assert retrieved_user.password == user.password
 
     def test_get_all_users(self, db: Session, user_data: dict):
         user_data_2 = {"name": "Jane Doe", "email": "janedoe@example.com", "password": "password456"}
@@ -50,8 +49,7 @@ class TestUserRepository:
         assert updated_user.id == user.id
         assert updated_user.name == updated_user_data["name"]
         assert updated_user.email == updated_user_data["email"]
-
-    #     assert updated_user.password != user.password
+        assert updated_user.password != updated_user_data["password"]
 
     def test_delete_user(self, db: Session, user_data: dict):
         user_repo = UserRepository(db)
