@@ -13,9 +13,6 @@ router = APIRouter()
 
 
 class UserController(IUserController):
-    def __init__(self):
-        self.router = APIRouter()
-
     @staticmethod
     @router.post("/", status_code=status.HTTP_201_CREATED, response_model=UserOut)
     async def create_user(user: UserCreate, db: Session = Depends(get_db)):
