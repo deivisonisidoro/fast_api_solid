@@ -19,6 +19,7 @@ class UserRepository(IUserRepository):
         self.password_manager = password_manager if password_manager else PasswordManager()
 
     def create_user(self, user: UserCreate) -> User:
+        user.password = self.password_manager.hash_generate(user.password)
         db_user = User(name=user.name, email=user.email, password=user.password)
         self.db.add(db_user)
         self.db.commit()
