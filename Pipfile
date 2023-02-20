@@ -33,6 +33,8 @@ asyncpg = "*"
 pydantic = {extras = ["email"], version = "*"}
 httpx = "*"
 faker = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
+passlib = {extras = ["bcrypt"], version = "*"}
 
 [dev-packages]
 
