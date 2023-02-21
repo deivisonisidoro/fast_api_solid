@@ -13,11 +13,3 @@ class LoginData(BaseModel):
 class SuccessLogin(BaseModel):
     user: UserOut
     access_token: str
-
-
-class RefreshTokenData(BaseModel):
-    refresh_token: str
-
-
-class SuccessRefreshToken(BaseModel):
-    access_token: str

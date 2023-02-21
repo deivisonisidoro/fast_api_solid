@@ -45,6 +45,12 @@ class UserRepository(IUserRepository):
         self.db.refresh(user)
         return user
 
+    def update_user_password(self, user: User, password: str) -> User:
+        user.password = self.password_manager.hash_generate(password)
+        self.db.commit()
+        self.db.refresh(user)
+        return user
+
     def delete_user(self, user: User):
         self.db.delete(user)
         self.db.commit()

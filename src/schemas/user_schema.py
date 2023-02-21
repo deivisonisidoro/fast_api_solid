@@ -29,6 +29,12 @@ class UserOut(UserBase):
         orm_mode = True
 
 
+class PasswordReset(BaseModel):
+    email: str
+    password: str
+    token: str
+
+
 class UserDB(UserBase):
     id: int
     password: str

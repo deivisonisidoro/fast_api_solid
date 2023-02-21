@@ -8,7 +8,7 @@ from src.config.database import get_db
 from src.providers.password_manager import PasswordManager
 from src.providers.token_manager import TokenManager
 from src.repositories.user_repository import UserRepository
-from src.schemas.login_schema import LoginData, RefreshTokenData, SuccessLogin, SuccessRefreshToken
+from src.schemas.login_schema import LoginData, SuccessLogin
 from src.schemas.user_schema import UserIn, UserOut
 from src.utils.auths_utils import get_user_logged_in
 
