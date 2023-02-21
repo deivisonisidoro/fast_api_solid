@@ -28,4 +28,4 @@ __pycache__/
 __pypackages__/
 .poetry/
 
-env
+venv
