@@ -1,14 +1,14 @@
 import os
 import sys
 from contextlib import contextmanager
-from typing import Any, Generator
+from typing import Any, Generator, Union
 
 import pytest
 from faker import Faker
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session, sessionmaker
 
 from src.config.database import Base, get_db
 from src.routers import router
@@ -18,14 +18,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 faker = Faker()
 
-
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 # Use connect_args parameter only with sqlite
 SessionTesting = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-def start_application():
+def start_application() -> FastAPI:
     app = FastAPI()
     app.include_router(router, prefix="/api")
     return app
@@ -33,21 +32,23 @@ def start_application():
 
 @contextmanager
 @pytest.fixture
-def db():
+def db() -> Generator[Session, Any, None]:
     session = SessionTesting()
 
     Base.metadata.create_all(bind=engine)
 
-    yield session
-
-    session.rollback()
-    Base.metadata.drop_all(bind=engine)
-    engine.dispose()  # close all connections to the database
-
     try:
-        os.remove("test.db")
-    except FileNotFoundError:
-        pass
+        yield session
+    finally:
+        session.close()
+        session.rollback()
+        Base.metadata.drop_all(bind=engine)
+        engine.dispose()  # close all connections to the database
+
+        try:
+            os.remove("test.db")
+        except FileNotFoundError:
+            pass
 
 
 @pytest.fixture(scope="function")
@@ -68,7 +69,7 @@ def client(app: FastAPI, db: SessionTesting) -> Generator[TestClient, Any, None]
     the `get_db` dependency that is injected into routes.
     """
 
-    def _get_test_db():
+    def _get_test_db() -> Union[SessionTesting, None]:
         try:
             yield db
         finally:
