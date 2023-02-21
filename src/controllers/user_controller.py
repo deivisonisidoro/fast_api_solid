@@ -16,7 +16,7 @@ router = APIRouter()
 class UserController(IUserController):
     @staticmethod
     @router.post("/", status_code=status.HTTP_201_CREATED, response_model=UserOut)
-    async def create_user(user: UserCreate = Depends(get_user_logged_in), db: Session = Depends(get_db)):
+    async def create_user(user: UserCreate, db: Session = Depends(get_db)):
         user_service = UserRepository(db)
         db_user = user_service.get_user_by_email(user.email)
 
@@ -30,7 +30,7 @@ class UserController(IUserController):
 
     @staticmethod
     @router.get("/{user_id}", status_code=status.HTTP_200_OK, response_model=UserOut)
-    async def get_user(user_id: int = Depends(get_user_logged_in), db: Session = Depends(get_db)):
+    async def get_user(user_id: int, db: Session = Depends(get_db)):
         user_service = UserRepository(db)
         user = user_service.get_user_by_id(user_id)
 
