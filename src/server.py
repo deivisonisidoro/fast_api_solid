@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
 
+from src.config.settings import Settings
 from src.routers import router
 
 load_dotenv()
@@ -11,6 +12,7 @@ app = FastAPI(
     title="Anime Search API",
     version="0.0.1",
 )
+settings = Settings()
 
 origins = ["http://localhost:3000"]
 
