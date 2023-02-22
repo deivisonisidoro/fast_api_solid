@@ -7,7 +7,11 @@ class ITokenManager(ABC):
         pass
 
     @abstractmethod
-    def generate_jwt_token(user_email: str) -> str:
+    def generate_jwt_token(self, user_email: str) -> str:
+        pass
+
+    @abstractmethod
+    def decode_jwt_token(self, encoded_jwt_token: str) -> dict[str, any]:
         pass
 
     @abstractmethod

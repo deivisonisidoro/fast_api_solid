@@ -3,8 +3,10 @@ from fastapi_mail import FastMail, MessageSchema, MessageType
 
 from src.config.mail import MailConfig
 
+from .interfaces.iemail_provider import IEmailProvider
 
-class EmailProvider:
+
+class EmailProvider(IEmailProvider):
     def __init__(self):
         self.conf = MailConfig(mail_from="solid_fast_api@example.com").set_mail_configuration()
         self.fm = FastMail(self.conf)
@@ -25,6 +27,6 @@ class EmailProvider:
         subject: str,
         body: str,
         subtype: MessageType,
-        background_tasks: BackgroundTasks = Depends(),
+        background_tasks: BackgroundTasks,
     ):
         background_tasks.add_task(self._send_email, recipients, subject, body, subtype)

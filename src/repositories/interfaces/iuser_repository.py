@@ -27,5 +27,9 @@ class IUserRepository(ABC):
         pass
 
     @abstractmethod
+    def update_user_password(self, user: User, password: str) -> User:
+        pass
+
+    @abstractmethod
     def delete_user(self, user: User):
         pass
