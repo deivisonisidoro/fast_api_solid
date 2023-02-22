@@ -19,7 +19,7 @@ RUN pipenv install --system --deploy --ignore-pipfile
 COPY ./src /app/src
 
 # Expose the port that the app will run on
-EXPOSE 80
+EXPOSE 8000
 
 # Start the server
-CMD ["uvicorn", "src.server:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
+CMD ["uvicorn", "src.server:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

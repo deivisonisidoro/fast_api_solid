@@ -43,7 +43,7 @@ This project relies on environment variables to be set in a .env file. To set up
 1. Clone the repository to your computer.
 2. Navigate to the project directory.
 3. Run the command `pipenv install` to install the required Python dependencies.
-4. Run the command `docker-compose up` to build and run the Docker image.
+4. Run the command `docker-compose up -d` to build and run the Docker image.
 5. Open a web browser and navigate to `http://localhost:8000` to view the project's homepage.
 
 ### Viewing Logs

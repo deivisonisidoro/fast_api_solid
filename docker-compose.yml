@@ -3,11 +3,11 @@ version: "3"
 services:
   web:
     build: .
-    command: uvicorn src.server:app --host 0.0.0.0 --port 80 --reload
+    command: uvicorn src.server:app --host 0.0.0.0 --port 8000 --reload
     volumes:
       - .:/app
     ports:
-      - "5000:80"
+      - "8000:8000"
     depends_on:
       - postgresql
     env_file:
