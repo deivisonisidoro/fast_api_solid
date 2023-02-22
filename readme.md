@@ -10,6 +10,26 @@ Before getting started, you need to have the following requirements installed on
 - Docker Compose
 - Pipenv
 
+## Project Architecture
+
+The project is organized into the following directories and files:
+
+- `.pytest_cache` - directory for pytest cache files
+- `.vscode` - directory for VS Code configuration
+- `alembic` - directory for Alembic migration scripts
+- `src` - directory for source code files
+- `.env.example` - example environment variables file
+- `.flake8` - configuration file for Flake8 linter
+- `.gitignore` - Git ignore file
+- `alembic.ini` - Alembic configuration file
+- `docker-compose.yml` - Docker Compose configuration file
+- `Dockerfile` - Dockerfile for building the Docker image
+- `LICENSE` - license file
+- `Pipfile` - Pipenv configuration file
+- `Pipfile.lock` - Pipenv lock file
+- `pyproject.toml` - configuration file for Pyproject
+- `readme.md` - README file
+
 ## Using Environment Variables
 
 This project relies on environment variables to be set in a .env file. To set up the necessary environment variables, create a copy of the `.env.example` file and rename it to `.env`. Then, fill in the values for each variable.
