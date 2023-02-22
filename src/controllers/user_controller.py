@@ -1,7 +1,7 @@
-import os
 from typing import List
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request, status
+from fastapi.templating import Jinja2Templates
 from fastapi_mail import MessageType
 from sqlalchemy.orm import Session
 
@@ -86,7 +86,9 @@ class UserController(IUserController):
 
     @staticmethod
     @router.post("/password-reset-request", status_code=status.HTTP_200_OK)
-    async def password_reset_request(background_tasks: BackgroundTasks, email: str, db: Session = Depends(get_db)):
+    async def password_reset_request(
+        request: Request, background_tasks: BackgroundTasks, email: str, db: Session = Depends(get_db)
+    ):
         user_service = UserRepository(db)
         user = user_service.get_user_by_email(email)
 
@@ -94,8 +96,11 @@ class UserController(IUserController):
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
         jwt_token = TokenManager().generate_jwt_token(user_email=user.email)
-        html = f""""<p>Click the following link to reset your password: <a>http://localhost:8000/password-reset?token={jwt_token}<a/></p> """
-
+        templates = Jinja2Templates(directory="src/templates")
+        html = templates.TemplateResponse(
+            "password_reset_request.html",
+            {"request": request, "jwt_token": jwt_token, "user_name": user.name},
+        ).body
         email_provider = EmailProvider()
         await email_provider.send_email(
             recipients=[user.email],

@@ -73,7 +73,6 @@ class TestUserController:
         response = client.put("/api/users/999", json=user_data)
         assert response.status_code == status.HTTP_404_NOT_FOUND
 
-    @pytest.mark.asyncio
     def test_password_reset_request(self, db: Session, user_data: dict, client: TestClient):
         # Create user using UserRepository
         user_service = UserRepository(db)
