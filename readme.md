@@ -1,6 +1,10 @@
-# Anime Search API
+# Fast API SOLID
 
-This project is an example of a web application using FastAPI and Docker to provide a simple API for searching anime titles.
+This is a study project that demonstrates how to implement the SOLID principles using FastAPI, a modern, fast (high-performance), web framework for building APIs with Python. The project provides a sample implementation of a web application that follows SOLID principles, with clean architecture and dependency injection.
+
+The codebase is structured according to the Domain-Driven Design (DDD) approach, with separate directories for configuration, controllers, models, providers, repositories, schemas, templates, tests, and utilities. It also includes a main server.py file that runs the FastAPI application and a routers.py file that defines the API endpoints.
+
+This project serves as an example of how to build scalable and maintainable web applications using modern Python tools and best practices.
 
 ## Requirements
 
