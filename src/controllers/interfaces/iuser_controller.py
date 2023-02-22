@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 from typing import List
 
+from fastapi import BackgroundTasks, Request
 from sqlalchemy.orm import Session
 
-from src.schemas.user_schema import UserCreate, UserOut, UserUpdate
+from src.schemas.user_schema import PasswordReset, UserCreate, UserOut, UserUpdate
 
 
 class IUserController(ABC):
@@ -25,4 +26,12 @@ class IUserController(ABC):
 
     @abstractmethod
     def delete_user(self, user_id: int, db: Session):
+        pass
+
+    @abstractmethod
+    def password_reset_request(request: Request, background_tasks: BackgroundTasks, email: str, db: Session):
+        pass
+
+    @abstractmethod
+    def password_reset(password_reset: PasswordReset, db: Session):
         pass
