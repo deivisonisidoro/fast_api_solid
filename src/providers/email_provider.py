@@ -10,7 +10,6 @@ class EmailProvider:
         self.fm = FastMail(self.conf)
 
     async def _send_email(self, recipients: list, subject: str, body: str, subtype: MessageType):
-        print(body)
         message = MessageSchema(
             subject=subject,
             recipients=recipients,
