@@ -21,7 +21,6 @@ class TokenManager(ITokenManager):
 
     def generate_jwt_token(self, user_email: str) -> str:
         payload = {"email": user_email}
-        print(self.settings)
         expirations = datetime.utcnow() + timedelta(minutes=5)
         # expirations = datetime.utcnow() + timedelta(minutes=self.settings.GENERAL_EXPIRES_IN_MINUTES)
         payload.update({"exp": expirations})

@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from sqlalchemy.orm import Session
 
-from src.models.user_models import User
+from src.entities.user_models import User
 from src.providers.password_manager import PasswordManager
 from src.schemas.user_schema import UserCreate, UserUpdate
 

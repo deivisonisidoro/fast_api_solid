@@ -1,7 +1,4 @@
-from datetime import datetime, timedelta
-
 from fastapi import APIRouter, Depends, HTTPException, status
-from jose import jwt
 from sqlalchemy.orm import Session
 
 from src.config.database import get_db
@@ -17,14 +14,10 @@ from .interfaces.iauth_controller import IAuthController
 router = APIRouter()
 
 
-SECRET_KEY = "key_secret"
-ALGORITHM = "HS256"
-
-
 class AuthController(IAuthController):
     @staticmethod
     @router.post("/token", status_code=status.HTTP_200_OK, response_model=SuccessLogin)
-    def login_for_access_token(login_data: LoginData, db: Session = Depends(get_db)) -> dict:
+    def login_for_access_token(login_data: LoginData, db: Session = Depends(get_db)) -> SuccessLogin:
         email = login_data.email
         password = login_data.password
         user_service = UserRepository(db)
