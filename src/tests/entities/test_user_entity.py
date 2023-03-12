@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from src.entities import User
 
 
-class TestUserModel:
+class TestUserEntity:
     def test_create_user(self, db: Session, user_data: dict):
         # test
         user = User(name=user_data["name"], email=user_data["email"], password=user_data["password"])
