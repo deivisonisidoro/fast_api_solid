@@ -6,6 +6,21 @@ The codebase is structured according to the Domain-Driven Design (DDD) approach,
 
 This project serves as an example of how to build scalable and maintainable web applications using modern Python tools and best practices.
 
+## Table of Contents
+
+- [Fast API SOLID](#fast-api-solid)
+  - [Table of Contents](#table-of-contents)
+  - [Requirements](#requirements)
+  - [Using Environment Variables](#using-environment-variables)
+  - [Running the Project](#running-the-project)
+    - [Viewing Logs](#viewing-logs)
+  - [Database Migrations with Alembic](#database-migrations-with-alembic)
+  - [Contributing](#contributing)
+  - [Code Standardization](#code-standardization)
+  - [API Documentation](#api-documentation)
+  - [Testing](#testing)
+  - [License](#license)
+
 ## Requirements
 
 Before getting started, you need to have the following requirements installed on your computer:
@@ -13,26 +28,6 @@ Before getting started, you need to have the following requirements installed on
 - Docker
 - Docker Compose
 - Pipenv
-
-## Project Architecture
-
-The project is organized into the following directories and files:
-
-- `.pytest_cache` - directory for pytest cache files
-- `.vscode` - directory for VS Code configuration
-- `alembic` - directory for Alembic migration scripts
-- `src` - directory for source code files
-- `.env.example` - example environment variables file
-- `.flake8` - configuration file for Flake8 linter
-- `.gitignore` - Git ignore file
-- `alembic.ini` - Alembic configuration file
-- `docker-compose.yml` - Docker Compose configuration file
-- `Dockerfile` - Dockerfile for building the Docker image
-- `LICENSE` - license file
-- `Pipfile` - Pipenv configuration file
-- `Pipfile.lock` - Pipenv lock file
-- `pyproject.toml` - configuration file for Pyproject
-- `readme.md` - README file
 
 ## Using Environment Variables
 
