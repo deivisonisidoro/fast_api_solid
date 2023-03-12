@@ -4,7 +4,7 @@ from jose import JWTError
 from sqlalchemy.orm import Session
 
 from src.config.database import get_db
-from src.providers.token_manager import TokenManager
+from src.providers.token_manager_provider import TokenManagerProvider
 from src.repositories.user_repository import UserRepository
 
 oauth2_schema = OAuth2PasswordBearer(tokenUrl="token")
@@ -12,7 +12,7 @@ oauth2_schema = OAuth2PasswordBearer(tokenUrl="token")
 
 def verify_token(token: str):
     try:
-        email = TokenManager().verify_access_token(token)
+        email = TokenManagerProvider().verify_access_token(token)
     except JWTError:
         return None
     return email
