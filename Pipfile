@@ -76,6 +76,7 @@ virtualenv-clone = "==0.5.7"
 wcwidth = "==0.2.6"
 pip = "*"
 fastapi-mail = "*"
+pytest-asyncio = "*"
 
 [dev-packages]
 
