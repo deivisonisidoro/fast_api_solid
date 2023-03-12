@@ -2,6 +2,7 @@ import os
 import sys
 from contextlib import contextmanager
 from typing import Any, Generator, Union
+from unittest.mock import MagicMock
 
 import pytest
 from faker import Faker
@@ -11,7 +12,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
 from src.config.database import Base, get_db
-from src.routers import router
+from src.routers.router import router
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # this is to include backend dir in sys.path so that we can import from db,main.py
@@ -90,6 +91,11 @@ def user_data():
         "email": faker.email(),
         "password": faker.password(),
     }
+
+
+@pytest.fixture
+def mocker():
+    return MagicMock()
 
 
 class TestDB:
