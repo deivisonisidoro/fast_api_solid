@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class IPasswordManager(ABC):
+class IPasswordManagerProvider(ABC):
     @abstractmethod
     def hash_generate(self, text: str) -> str:
         pass

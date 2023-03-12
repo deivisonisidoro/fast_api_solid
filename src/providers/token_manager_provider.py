@@ -5,10 +5,10 @@ from jose import JWTError, jwt
 
 from src.config.settings import Settings
 
-from .interfaces.itoken_manager import ITokenManager
+from .interfaces.itoken_manager import ITokenManagerProvider
 
 
-class TokenManager(ITokenManager):
+class TokenManagerProvider(ITokenManagerProvider):
     def __init__(self, settings=Settings()):
         self.settings = settings
 
