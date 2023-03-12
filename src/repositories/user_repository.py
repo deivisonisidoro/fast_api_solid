@@ -3,7 +3,7 @@ from typing import List, Optional
 from sqlalchemy.orm import Session
 
 from src.entities.user_models import User
-from src.providers.password_manager import PasswordManager
+from src.providers.password_manager_provider import PasswordManagerProvider
 from src.schemas.user_schema import UserCreate, UserUpdate
 
 from .interfaces.iuser_repository import IUserRepository
@@ -13,10 +13,10 @@ class UserRepository(IUserRepository):
     def __init__(
         self,
         db: Session,
-        password_manager: Optional[PasswordManager] = None,
+        password_manager: Optional[PasswordManagerProvider] = None,
     ):
         self.db = db
-        self.password_manager = password_manager if password_manager else PasswordManager()
+        self.password_manager = password_manager if password_manager else PasswordManagerProvider()
 
     def create_user(self, user: UserCreate) -> User:
         user.password = self.password_manager.hash_generate(user.password)
