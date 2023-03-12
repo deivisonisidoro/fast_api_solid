@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from src.entities.user_models import User
+from src.entities.user_entity import User
 from src.schemas.user_schema import UserCreate, UserUpdate
 
 
