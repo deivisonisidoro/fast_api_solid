@@ -5,6 +5,21 @@ from src.config.database import Base
 
 
 class User(Base):
+    """
+    Defines a SQLAlchemy model for the 'users' table in the database.
+
+    Attributes:
+        id (int): Primary key column for the user.
+        name (str): Name of the user. Maximum length is 50 characters.
+        email (str): Email address of the user. Must be unique and maximum length is 255 characters.
+        password (str): Password for the user.
+        created_at (datetime): Timestamp for when the user was created.
+        updated_at (datetime): Timestamp for when the user was last updated.
+
+    Constraints:
+        uq_users_email (UniqueConstraint): Unique constraint for the email column.
+    """
+
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
