@@ -12,9 +12,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Weather Sunny
-plugins:
-  - search
-  - mkdocstrings
+
 markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.emoji
@@ -26,8 +24,16 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_div_format
-
 extra_css:
   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.css
 extra_javascript:
   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
+
+watch:
+  - src
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
