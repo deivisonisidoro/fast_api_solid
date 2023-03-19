@@ -77,6 +77,11 @@ wcwidth = "==0.2.6"
 pip = "*"
 fastapi-mail = "*"
 pytest-asyncio = "*"
+mkdocs = "*"
+pymdown-extensions = "*"
+install = "*"
+mkdocs-material = "*"
+mkdocstrings = "*"
 
 [dev-packages]
 
