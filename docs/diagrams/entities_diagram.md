@@ -1,4 +1,4 @@
-# User Types
+# Entities
 
 In our system, there are three main user types: `Professor`, `Student`, and `Administrator`. Each user type has different roles and responsibilities.
 
@@ -23,7 +23,7 @@ An administrator can:
 - Manage courses
 - Manage users
 
-## User Types Diagram
+## Entities Diagram
 
 ```mermaid
 graph TD

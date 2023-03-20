@@ -1,3 +1,3 @@
-# User entity
+# User Entity
 
 ::: src.entities.user_entity
