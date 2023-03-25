@@ -19,9 +19,6 @@ class TestProfessorEntity:
             db (Session): A database session object.
             user_data (dict): A dictionary containing data for creating a new user.
 
-        Returns:
-            None
-
         Expected Results:
             - A new Professor object is created with the provided data.
             - The object is added to the database.

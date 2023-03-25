@@ -16,8 +16,6 @@ class TestStudentEntity:
             db (Session): A database session object.
             user_data (dict): A dictionary containing data for creating a new user.
 
-        Returns:
-            None
 
         Expected Results:
             - A new User object is created with the provided data.
