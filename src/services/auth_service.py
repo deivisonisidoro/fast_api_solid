@@ -14,6 +14,20 @@ from .interfaces.i_auth_services import IAuthService
 
 @dataclass
 class AuthService(IAuthService):
+    """
+    Implementation of the IAuthService interface for authentication.
+
+    This class provides functionality for user authentication including verifying passwords and creating access tokens.
+
+    Args:
+        db: SQLAlchemy Session instance
+
+    Attributes:
+        db (Session): SQLAlchemy Session instance
+        password_manager (PasswordManagerProvider): Password manager instance
+        token_manager (TokenManagerProvider): Token manager instance
+    """
+
     db: Session
     password_manager = PasswordManagerProvider()
     token_manager = TokenManagerProvider()
@@ -21,7 +35,19 @@ class AuthService(IAuthService):
     def __post_init__(self):
         self._user_repository: IUserRepository = UserRepository(self.db)
 
-    def login_for_access_token(self, login_data: LoginData):
+    def login_for_access_token(self, login_data: LoginData) -> SuccessLogin:
+        """
+        Verifies user's email and password and returns a SuccessLogin object with an access token.
+
+        Args:
+            login_data (LoginData): User login data including email and password.
+
+        Returns:
+            SuccessLogin: A SuccessLogin object containing user data and access token.
+
+        Raises:
+            HTTPException: If the provided email or password is incorrect.
+        """
         email = login_data.email
         password = login_data.password
         user = self._user_repository.get_user_by_email(email)
