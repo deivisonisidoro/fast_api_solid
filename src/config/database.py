@@ -11,10 +11,25 @@ Base = declarative_base()
 
 
 def create_db():
+    """
+    Create all database tables.
+
+    This function creates all database tables defined in the models.py file, based on the metadata created by the declarative base.
+
+    """
     Base.metadata.create_all(bind=engine)
 
 
 def get_db():
+    """
+    Get a database session.
+
+    This function returns a context manager that provides a SQLAlchemy session. The session is closed automatically when the context manager is exited.
+
+    Returns:
+        generator: A generator that yields a database session.
+
+    """
     db = SessionLocal()
     try:
         yield db

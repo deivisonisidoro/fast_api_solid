@@ -1,3 +1,3 @@
-# Mail Configuration
+# Mail
 
 ::: src.config.mail
