@@ -4,6 +4,28 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
+    """
+    A configuration settings class.
+
+    Attributes:
+        PG_USER (str): The username for the PostgreSQL database.
+        PG_PASSWORD (str): The password for the PostgreSQL database.
+        PG_DB (str): The name of the PostgreSQL database.
+        DATABASE_URL (str): The URL of the PostgreSQL database.
+        SECRET_KEY (str): The secret key used for JWT token encoding and decoding.
+        ALGORITHM (str): The encryption algorithm used for JWT token encoding and decoding.
+        ACCESS_TOKEN_EXPIRATION_MINUTES (int): The expiration time (in minutes) for access tokens.
+        GENERAL_EXPIRES_IN_MINUTES (int): The expiration time (in minutes) for general tokens.
+        EMAIL_HOST (str): The hostname of the email server.
+        EMAIL_HOST_USER (str): The username for the email server.
+        EMAIL_HOST_PASSWORD (str): The password for the email server.
+        EMAIL_PORT (int): The port number for the email server.
+
+    Config:
+        env_file (str): The name of the file containing environment variables.
+        env_file_encoding (str): The encoding of the environment variables file.
+    """
+
     PG_USER: str = os.getenv("PG_USER", default="")
     PG_PASSWORD: str = os.getenv("PG_PASSWORD", default="")
     PG_DB: str = os.getenv("PG_DB", default="fastapi")
