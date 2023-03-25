@@ -10,41 +10,42 @@ from .interfaces.iuser_repository import IUserRepository
 
 
 class UserRepository(IUserRepository):
-    """
-    Implementation of the IUserRepository interface for User entity.
+    """Implementation of the IUserRepository interface for User entity.
+
     This class handles database interactions with the User entity, including creating, reading, updating, and deleting
     User records.
 
-    :param db: SQLAlchemy Session instance
-    :type db: Session
-    :param password_manager: Password manager instance, defaults to None
-    :type password_manager: Optional[PasswordManagerProvider], optional
+    Args:
+        db: SQLAlchemy Session instance
+        password_manager: Password manager instance, defaults to None
+
+    Attributes:
+        db (Session): SQLAlchemy Session instance
+        password_manager (Optional[PasswordManagerProvider]): Password manager instance, defaults to None
     """
 
     def __init__(
         self,
         db: Session,
         password_manager: Optional[PasswordManagerProvider] = None,
-    ):
-        """
-        Constructor method to initialize UserRepository instance
+    ) -> None:
+        """Constructor method to initialize UserRepository instance.
 
-        :param db: SQLAlchemy Session instance
-        :type db: Session
-        :param password_manager: Password manager instance, defaults to None
-        :type password_manager: Optional[PasswordManagerProvider], optional
+        Args:
+            db (Session): SQLAlchemy Session instance
+            password_manager (Optional[PasswordManagerProvider], optional): Password manager instance, defaults to None
         """
         self.db = db
         self.password_manager = password_manager if password_manager else PasswordManagerProvider()
 
     def create_user(self, user: UserCreate) -> User:
-        """
-        Create a new User entity
+        """Create a new User entity.
 
-        :param user: User create schema
-        :type user: UserCreate
-        :return: User entity
-        :rtype: User
+        Args:
+            user (UserCreate): User create schema.
+
+        Returns:
+            User: User entity.
         """
         user.password = self.password_manager.hash_generate(user.password)
         db_user = User(name=user.name, email=user.email, password=user.password)
@@ -54,46 +55,44 @@ class UserRepository(IUserRepository):
         return db_user
 
     def get_user_by_id(self, user_id: int) -> User:
-        """
-        Retrieve a User entity by id
+        """Retrieve a User entity by id.
 
-        :param user_id: User id
-        :type user_id: int
-        :return: User entity
-        :rtype: User
+        Args:
+            user_id (int): User id.
+
+        Returns:
+            User: User entity.
         """
         return self.db.query(User).filter(User.id == user_id).first()
 
     def get_user_by_email(self, email: str) -> User:
-        """
-        Retrieve a User entity by email
+        """Retrieve a User entity by email.
 
-        :param email: User email
-        :type email: str
-        :return: User entity
-        :rtype: User
+        Args:
+            email (str): User email.
+
+        Returns:
+            User: User entity.
         """
         return self.db.query(User).filter(User.email == email).first()
 
     def get_all_users(self) -> List[User]:
-        """
-        Retrieve all User entities
+        """Retrieve all User entities.
 
-        :return: List of User entities
-        :rtype: List[User]
+        Returns:
+            List[User]: List of User entities.
         """
         return self.db.query(User).all()
 
     def update_user(self, user: User, user_update: UserUpdate) -> User:
-        """
-        Update a User entity
+        """Update a User entity.
 
-        :param user: User entity to update
-        :type user: User
-        :param user_update: User update schema
-        :type user_update: UserUpdate
-        :return: Updated User entity
-        :rtype: User
+        Args:
+            user (User): User entity to update.
+            user_update (UserUpdate): User update schema.
+
+        Returns:
+            User: Updated User entity.
         """
         user.name = user_update.name or user.name
         user.email = user_update.email or user.email
@@ -105,27 +104,29 @@ class UserRepository(IUserRepository):
         return user
 
     def update_user_password(self, user: User, password: str) -> User:
-        """
-        Update the password of a User entity
+        """Update the password of a User entity.
 
-        :param user: User entity to update
-        :type user: User
-        :param password: New password
-        :type password: str
-        :return: Updated User entity
-        :rtype: User
+        Args:
+            user (User): User entity to update.
+            password (str): New password.
+
+        Returns:
+            User: Updated User entity.
         """
         user.password = self.password_manager.hash_generate(password)
         self.db.commit()
         self.db.refresh(user)
         return user
 
-    def delete_user(self, user: User):
+    def delete_user(self, user: User) -> None:
         """
-        Delete a User entity
+        Deletes a User entity from the database.
 
-        :param user: User entity to delete
-        :type user: User
+        Args:
+            user (User): The User entity to be deleted.
+
+        Returns:
+            None
         """
         self.db.delete(user)
         self.db.commit()
