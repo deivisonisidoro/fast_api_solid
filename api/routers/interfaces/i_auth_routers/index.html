@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../../..">
+        <link rel="prev" href="../../user_routers/">
       
       
-        <link rel="next" href="../professor_entity/">
+        <link rel="next" href="../i_user_routers/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>Administrator Entity - Fast API SOLID Docs</title>
+        <title>Auth Router Interface - Fast API SOLID Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c4a75a56.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -42,11 +42,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#administrator-entity" class="md-skip">
+        <a href="#auth-router-interface" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Fast API SOLID Docs" class="md-header__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
+    <a href="../../../.." title="Fast API SOLID Docs" class="md-header__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Administrator Entity
+              Auth Router Interface
             
           </span>
         </div>
@@ -164,7 +164,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Fast API SOLID Docs" class="md-nav__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
+    <a href="../../../.." title="Fast API SOLID Docs" class="md-nav__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -183,7 +183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         FastAPI SOLID Docs: Building Scalable Python Web Apps
       </a>
     </li>
@@ -225,16 +225,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
       
       
       
@@ -243,7 +241,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           Entities
@@ -254,66 +252,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Administrator Entity
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../entities/administrator_entity/" class="md-nav__link">
         Administrator Entity
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#src.entities.administrator_entity" class="md-nav__link">
-    src.entities.administrator_entity
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.entities.administrator_entity.Administrator" class="md-nav__link">
-    Administrator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#administrator-entity-diagram" class="md-nav__link">
-    Administrator Entity Diagram
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -325,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../professor_entity/" class="md-nav__link">
+      <a href="../../../entities/professor_entity/" class="md-nav__link">
         Professor Entity
       </a>
     </li>
@@ -339,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../students_entity/" class="md-nav__link">
+      <a href="../../../entities/students_entity/" class="md-nav__link">
         Students Entity
       </a>
     </li>
@@ -353,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user_entity/" class="md-nav__link">
+      <a href="../../../entities/user_entity/" class="md-nav__link">
         User Entity
       </a>
     </li>
@@ -401,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../repositories/user_repository/" class="md-nav__link">
+      <a href="../../../repositories/user_repository/" class="md-nav__link">
         User Repository
       </a>
     </li>
@@ -442,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../repositories/interfaces/i_user_repository/" class="md-nav__link">
+      <a href="../../../repositories/interfaces/i_user_repository/" class="md-nav__link">
         User Repository Interface
       </a>
     </li>
@@ -468,14 +411,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -484,7 +429,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           Routers
@@ -497,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routers/auth_routers/" class="md-nav__link">
+      <a href="../../auth_routers/" class="md-nav__link">
         Auth Routers
       </a>
     </li>
@@ -511,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routers/routers/" class="md-nav__link">
+      <a href="../../routers/" class="md-nav__link">
         Routers
       </a>
     </li>
@@ -525,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routers/user_routers/" class="md-nav__link">
+      <a href="../../user_routers/" class="md-nav__link">
         User Routers
       </a>
     </li>
@@ -537,14 +482,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" checked>
       
       
       
@@ -553,7 +500,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_3_4">
           <span class="md-nav__icon md-icon"></span>
           Interfaces
@@ -564,11 +511,79 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../routers/interfaces/i_auth_routers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Auth Router Interface
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Auth Router Interface
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.routers.interfaces.iauth_routers" class="md-nav__link">
+    src.routers.interfaces.iauth_routers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.routers.interfaces.iauth_routers.IAuthRouters" class="md-nav__link">
+    IAuthRouters
+  </a>
+  
+    <nav class="md-nav" aria-label="IAuthRouters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.routers.interfaces.iauth_routers.IAuthRouters.get_profile" class="md-nav__link">
+    get_profile()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.routers.interfaces.iauth_routers.IAuthRouters.login_for_access_token" class="md-nav__link">
+    login_for_access_token()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -580,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routers/interfaces/i_user_routers/" class="md-nav__link">
+      <a href="../i_user_routers/" class="md-nav__link">
         User Router Interface
       </a>
     </li>
@@ -635,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schemas/email_message_schema/" class="md-nav__link">
+      <a href="../../../schemas/email_message_schema/" class="md-nav__link">
         Email Message Schema
       </a>
     </li>
@@ -649,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schemas/login_schema/" class="md-nav__link">
+      <a href="../../../schemas/login_schema/" class="md-nav__link">
         Login Schema
       </a>
     </li>
@@ -663,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schemas/token_schema/" class="md-nav__link">
+      <a href="../../../schemas/token_schema/" class="md-nav__link">
         Token Schema
       </a>
     </li>
@@ -677,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schemas/user_schema/" class="md-nav__link">
+      <a href="../../../schemas/user_schema/" class="md-nav__link">
         User schema
       </a>
     </li>
@@ -725,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/auth_services/" class="md-nav__link">
+      <a href="../../../services/auth_services/" class="md-nav__link">
         Auth Service
       </a>
     </li>
@@ -739,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/user_services/" class="md-nav__link">
+      <a href="../../../services/user_services/" class="md-nav__link">
         User Service
       </a>
     </li>
@@ -780,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/interfaces/i_auth_service/" class="md-nav__link">
+      <a href="../../../services/interfaces/i_auth_service/" class="md-nav__link">
         Auth Service Interfaces
       </a>
     </li>
@@ -794,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/interfaces/i_user_service/" class="md-nav__link">
+      <a href="../../../services/interfaces/i_user_service/" class="md-nav__link">
         User Service Interfaces
       </a>
     </li>
@@ -857,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../diagrams/entities_diagram/" class="md-nav__link">
+      <a href="../../../../diagrams/entities_diagram/" class="md-nav__link">
         Entities
       </a>
     </li>
@@ -898,23 +913,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#src.entities.administrator_entity" class="md-nav__link">
-    src.entities.administrator_entity
+  <a href="#src.routers.interfaces.iauth_routers" class="md-nav__link">
+    src.routers.interfaces.iauth_routers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.entities.administrator_entity.Administrator" class="md-nav__link">
-    Administrator
+  <a href="#src.routers.interfaces.iauth_routers.IAuthRouters" class="md-nav__link">
+    IAuthRouters
+  </a>
+  
+    <nav class="md-nav" aria-label="IAuthRouters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.routers.interfaces.iauth_routers.IAuthRouters.get_profile" class="md-nav__link">
+    get_profile()
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#administrator-entity-diagram" class="md-nav__link">
-    Administrator Entity Diagram
+        
+          <li class="md-nav__item">
+  <a href="#src.routers.interfaces.iauth_routers.IAuthRouters.login_for_access_token" class="md-nav__link">
+    login_for_access_token()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -933,13 +961,13 @@
                   
 
 
-<h1 id="administrator-entity">Administrator Entity</h1>
+<h1 id="auth-router-interface">Auth Router Interface</h1>
 
 
 <div class="doc doc-object doc-module">
 
 
-<a id="src.entities.administrator_entity"></a>
+<a id="src.routers.interfaces.iauth_routers"></a>
   <div class="doc doc-contents first">
 
   
@@ -957,8 +985,8 @@
 
 
 
-<h2 id="src.entities.administrator_entity.Administrator" class="doc doc-heading">
-        <code>Administrator</code>
+<h2 id="src.routers.interfaces.iauth_routers.IAuthRouters" class="doc doc-heading">
+        <code>IAuthRouters</code>
 
 
 </h2>
@@ -966,80 +994,14 @@
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><span title="src.config.database.Base">Base</span></code></p>
+        Bases: <code><span title="abc.ABC">ABC</span></code></p>
 
   
-      <p>Represents an administrator in the database.</p>
-<p>This SQLAlchemy model maps to the 'administrator' table in the database, and defines the columns and constraints for
-storing administrator information.</p>
+      <p>Abstract base class for defining authentication related API routes.</p>
 
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>id</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td><p>The primary key of the administrator table.</p></td>
-        </tr>
-        <tr>
-          <td><code>user_id</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td><p>The foreign key to the corresponding user of the administrator, with a unique constraint.</p></td>
-        </tr>
-        <tr>
-          <td><code>user</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="src.entities.user_entity.User" href="../user_entity/#src.entities.user_entity.User">User</a></code>
-          </td>
-          <td><p>The user object of the corresponding user of the administrator.</p></td>
-        </tr>
-        <tr>
-          <td><code>created_at</code></td>
-          <td>
-                <code>datetime</code>
-          </td>
-          <td><p>The timestamp for when the administrator was created.</p></td>
-        </tr>
-        <tr>
-          <td><code>updated_at</code></td>
-          <td>
-                <code>datetime</code>
-          </td>
-          <td><p>The timestamp for when the administrator was last updated.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="table-name">
-  <summary>Table name</summary>
-  <p>administrator: The name of the table in the database that this SQLAlchemy model maps to.</p>
-</details>
-<details class="columns">
-  <summary>Columns</summary>
-  <p>id: The primary key column for the administrator table.
-user_id: The foreign key column to the users table.
-created_at: The timestamp column for when the administrator was created.
-updated_at: The timestamp column for when the administrator was last updated.</p>
-</details>
-<details class="table-arguments">
-  <summary>Table arguments</summary>
-  <p>uq_administrator_user_id (UniqueConstraint): A unique constraint on the user_id column that ensures no two administrators share
-the same user.</p>
-</details>
 
         <details class="quote">
-          <summary>Source code in <code>src\entities\administrator_entity.py</code></summary>
+          <summary>Source code in <code>src\routers\interfaces\iauth_routers.py</code></summary>
           <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
@@ -1075,42 +1037,44 @@ the same user.</p>
 <span class="normal">40</span>
 <span class="normal">41</span>
 <span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Administrator</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">IAuthRouters</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Represents an administrator in the database.</span>
+<span class="sd">    Abstract base class for defining authentication related API routes.&quot;&quot;&quot;</span>
 
-<span class="sd">    This SQLAlchemy model maps to the &#39;administrator&#39; table in the database, and defines the columns and constraints for</span>
-<span class="sd">    storing administrator information.</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">login_for_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login_data</span><span class="p">:</span> <span class="n">LoginData</span><span class="p">,</span> <span class="n">auth_service</span><span class="p">:</span> <span class="n">IAuthService</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SuccessLogin</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abstract method for logging in a user and generating an access token.</span>
 
-<span class="sd">    Attributes:</span>
-<span class="sd">        id (int): The primary key of the administrator table.</span>
-<span class="sd">        user_id (int): The foreign key to the corresponding user of the administrator, with a unique constraint.</span>
-<span class="sd">        user (User): The user object of the corresponding user of the administrator.</span>
-<span class="sd">        created_at (datetime): The timestamp for when the administrator was created.</span>
-<span class="sd">        updated_at (datetime): The timestamp for when the administrator was last updated.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            login_data (LoginData):</span>
+<span class="sd">                The user&#39;s email and password used for authentication.</span>
+<span class="sd">            auth_service (IAuthService):</span>
+<span class="sd">                An instance of the AuthService that will handle user authentication and access token generation.</span>
 
-<span class="sd">    Table name:</span>
-<span class="sd">        administrator: The name of the table in the database that this SQLAlchemy model maps to.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            SuccessLogin:</span>
+<span class="sd">                A schema representing a successful login attempt, containing a UserOut instance and an access token.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
 
-<span class="sd">    Columns:</span>
-<span class="sd">        id: The primary key column for the administrator table.</span>
-<span class="sd">        user_id: The foreign key column to the users table.</span>
-<span class="sd">        created_at: The timestamp column for when the administrator was created.</span>
-<span class="sd">        updated_at: The timestamp column for when the administrator was last updated.</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_profile</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="n">UserIn</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abstract method for getting a user&#39;s profile information.</span>
 
-<span class="sd">    Table arguments:</span>
-<span class="sd">        uq_administrator_user_id (UniqueConstraint): A unique constraint on the user_id column that ensures no two administrators share</span>
-<span class="sd">        the same user.</span>
+<span class="sd">        Args:</span>
+<span class="sd">        -----</span>
+<span class="sd">        user: UserIn</span>
+<span class="sd">            The currently logged-in user.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;administrator&quot;</span>
-
-    <span class="nb">id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">user_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;users.id&quot;</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s2">&quot;admins&quot;</span><span class="p">)</span>
-    <span class="n">created_at</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">DateTime</span><span class="p">(</span><span class="n">timezone</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">server_default</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
-    <span class="n">updated_at</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">DateTime</span><span class="p">(</span><span class="n">timezone</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">onupdate</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+<span class="sd">        Returns:</span>
+<span class="sd">        --------</span>
+<span class="sd">        UserOut:</span>
+<span class="sd">            A schema representing a user&#39;s profile information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1125,6 +1089,182 @@ the same user.</p>
 
 
 
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.routers.interfaces.iauth_routers.IAuthRouters.get_profile" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_profile</span><span class="p">(</span><span class="n">user</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Abstract method for getting a user's profile information.</p>
+      <hr />
+
+<details class="user">
+  <summary>UserIn</summary>
+  <p>The currently logged-in user.</p>
+</details>      <hr />
+
+<details class="userout">
+  <summary>UserOut</summary>
+  <p>A schema representing a user's profile information.</p>
+</details>
+      <details class="quote">
+        <summary>Source code in <code>src\routers\interfaces\iauth_routers.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="k">def</span> <span class="nf">get_profile</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="n">UserIn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract method for getting a user&#39;s profile information.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    -----</span>
+<span class="sd">    user: UserIn</span>
+<span class="sd">        The currently logged-in user.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    UserOut:</span>
+<span class="sd">        A schema representing a user&#39;s profile information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.routers.interfaces.iauth_routers.IAuthRouters.login_for_access_token" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">login_for_access_token</span><span class="p">(</span><span class="n">login_data</span><span class="p">,</span> <span class="n">auth_service</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Abstract method for logging in a user and generating an access token.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>login_data</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="src.schemas.login_schema.LoginData" href="../../../schemas/login_schema/#src.schemas.login_schema.LoginData">LoginData</a></code>
+          </td>
+          <td><p>The user's email and password used for authentication.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>auth_service</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="src.services.interfaces.i_auth_services.IAuthService" href="../../../services/interfaces/i_auth_service/#src.services.interfaces.i_auth_services.IAuthService">IAuthService</a></code>
+          </td>
+          <td><p>An instance of the AuthService that will handle user authentication and access token generation.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>SuccessLogin</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="src.schemas.login_schema.SuccessLogin" href="../../../schemas/login_schema/#src.schemas.login_schema.SuccessLogin">SuccessLogin</a></code>
+          </td>
+          <td><p>A schema representing a successful login attempt, containing a UserOut instance and an access token.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>src\routers\interfaces\iauth_routers.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="k">def</span> <span class="nf">login_for_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login_data</span><span class="p">:</span> <span class="n">LoginData</span><span class="p">,</span> <span class="n">auth_service</span><span class="p">:</span> <span class="n">IAuthService</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SuccessLogin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract method for logging in a user and generating an access token.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        login_data (LoginData):</span>
+<span class="sd">            The user&#39;s email and password used for authentication.</span>
+<span class="sd">        auth_service (IAuthService):</span>
+<span class="sd">            An instance of the AuthService that will handle user authentication and access token generation.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SuccessLogin:</span>
+<span class="sd">            A schema representing a successful login attempt, containing a UserOut instance and an access token.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
 
 
 
@@ -1141,25 +1281,7 @@ the same user.</p>
 
   </div>
 
-</div><h2 id="administrator-entity-diagram">Administrator Entity Diagram</h2>
-<div class="mermaid">    classDiagram
-        class Administrator {
-            +id: int
-            +user_id: int
-            +user: User
-            +created_at: datetime
-            +updated_at: datetime
-        }
-        class User {
-            +id: int
-            +name: str
-            +email: str
-            +password: str
-            +created_at: datetime
-            +updated_at: datetime
-        }
-        Administrator --|&gt; User</div>
-<p>The above diagram represents the relationship between the <code>Administrator</code> and <code>User</code> entities. It shows that the <code>Administrator</code> entity has a one-to-one relationship with the <code>User</code> entity.</p>
+</div>
 
 
 
@@ -1197,10 +1319,10 @@ the same user.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js"></script>
       
