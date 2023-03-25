@@ -15,17 +15,13 @@ router = APIRouter()
 
 def get_auth_service(db: Session = Depends(get_db)) -> AuthService:
     """
-    Dependency to get an instance of the AuthService with the database session provided by the get_db function.
+    Get an instance of the AuthService with the database session provided by the get_db function.
 
-    Parameters:
-    -----------
-    db: Session
-        The SQLAlchemy database session provided by the get_db function.
+    Args:
+        db (Session): The SQLAlchemy database session provided by the get_db function.
 
     Returns:
-    --------
-    AuthService:
-        An instance of the AuthService class.
+        AuthService: An instance of the AuthService class.
     """
     return AuthService(db)
 
@@ -42,19 +38,14 @@ class AuthRouters(IAuthRouters):
         auth_service: IAuthService = Depends(get_auth_service),
     ) -> SuccessLogin:
         """
-        Endpoint to log in a user and generate an access token.
+        Log in a user and generate an access token.
 
-        Parameters:
-        -----------
-        login_data: LoginData
-            The user's email and password used for authentication.
-        auth_service: IAuthService
-            The AuthService instance that will handle user authentication and access token generation.
+        Args:
+            login_data (LoginData): The user's email and password used for authentication.
+            auth_service (IAuthService): The AuthService instance that will handle user authentication and access token generation.
 
         Returns:
-        --------
-        SuccessLogin:
-            A schema representing a successful login attempt, containing a UserOut instance and an access token.
+            SuccessLogin: A schema representing a successful login attempt, containing a UserOut instance and an access token.
         """
         return auth_service.login_for_access_token(login_data)
 
@@ -62,16 +53,12 @@ class AuthRouters(IAuthRouters):
     @router.get("/profile", status_code=status.HTTP_200_OK, response_model=UserOut)
     async def get_profile(user: UserIn = Depends(get_user_logged_in)):
         """
-        Endpoint to get a user's profile information.
+        Get a user's profile information.
 
-        Parameters:
-        -----------
-        user: UserIn
-            The currently logged-in user.
+        Args:
+            user (UserIn): The currently logged-in user.
 
         Returns:
-        --------
-        UserOut:
-            A schema representing a user's profile information.
+            UserOut: A schema representing a user's profile information.
         """
         return user
