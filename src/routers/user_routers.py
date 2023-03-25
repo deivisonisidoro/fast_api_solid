@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 
 from src.config.database import get_db
 from src.schemas.token_schema import TokenOut
-from src.schemas.user_schema import PasswordReset, UserCreate, UserOut
+from src.schemas.user_schema import PasswordReset, UserCreate, UserOut, UserUpdate
 from src.services.interfaces.i_user_services import IUserService
 from src.services.user_service import UserService
 
@@ -37,17 +37,17 @@ class UserRouters(IUserRouters):
 
     @staticmethod
     @router.post("/", status_code=status.HTTP_201_CREATED, response_model=UserOut)
-    def create_user(user_create: UserCreate, user_service: IUserService = Depends(get_user_service)) -> UserOut:
+    def create_user(user: UserCreate, user_service: IUserService = Depends(get_user_service)) -> UserOut:
         """Endpoint to create a new user.
 
         Args:
-            user_create (UserCreate): The UserCreate object that represents the user to be created.
+            user (UserCreate): The UserCreate object that represents the user to be created.
             user_service (IUserService): The UserService instance that will handle the creation of the user.
 
         Returns:
             UserOut: The UserOut object representing the user that was created.
         """
-        return user_service.create_user(user_create)
+        return user_service.create_user(user)
 
     @staticmethod
     @router.get("/{user_id}", status_code=status.HTTP_200_OK, response_model=UserOut)
@@ -78,16 +78,22 @@ class UserRouters(IUserRouters):
 
     @staticmethod
     @router.patch("/{user_id}", status_code=status.HTTP_200_OK, response_model=UserOut)
-    def update_user(user_service: IUserService = Depends(get_user_service)) -> UserOut:
+    def update_user(
+        user_id: int,
+        user_update: UserUpdate,
+        user_service: IUserService = Depends(get_user_service),
+    ) -> UserOut:
         """Endpoint to update a user by its ID.
 
         Args:
+            user_id (int): The ID of the user to be updated.
+            user_update (UserUpdate): The UserUpdate object that represents the changes to be made to the user.
             user_service (IUserService): The UserService instance that will handle the update of the user.
 
         Returns:
             UserOut: The UserOut object representing the user that was updated.
         """
-        return user_service.update_user
+        return user_service.update_user(user_id, user_update)
 
     @staticmethod
     @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
