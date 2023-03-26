@@ -5,6 +5,18 @@ from src.schemas.user_schema import UserCreate, UserUpdate
 
 
 class TestUserRepository:
+    """
+    Test suite for testing the AuthService login_for_access_token method.
+
+    Methods:
+        test_login_for_access_token_success:
+            Test that a user can successfully login and retrieve an access token.
+        test_login_for_access_token_failure_when_user_do_not_exist:
+            Test that an HTTPException is raised when the user does not exist.
+        test_login_for_access_token_failure_when_password_is_not_valid:
+            Test that an HTTPException is raised when the password is not valid.
+    """
+
     def test_create_user(self, db: Session, user_data: dict):
         """
         Test creating a user in the database.
