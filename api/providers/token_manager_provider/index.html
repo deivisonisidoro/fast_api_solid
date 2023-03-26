@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../schemas/user_schema/">
+        <link rel="prev" href="../password_manager_provider/">
       
       
-        <link rel="next" href="../user_services/">
+        <link rel="next" href="../../repositories/user_repository/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>Auth Service - Fast API SOLID Docs</title>
+        <title>Token Manager Provider - Fast API SOLID Docs</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#auth-service" class="md-skip">
+        <a href="#token-manager-provider" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Auth Service
+              Token Manager Provider
             
           </span>
         </div>
@@ -391,14 +391,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -407,7 +409,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           Providers
@@ -420,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../providers/email_provider/" class="md-nav__link">
+      <a href="../email_provider/" class="md-nav__link">
         Email Provider
       </a>
     </li>
@@ -434,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../providers/password_manager_provider/" class="md-nav__link">
+      <a href="../password_manager_provider/" class="md-nav__link">
         Password Manager Provider
       </a>
     </li>
@@ -446,11 +448,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../providers/token_manager_provider/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Token Manager Provider
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Token Manager Provider
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider" class="md-nav__link">
+    src.providers.token_manager_provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider" class="md-nav__link">
+    TokenManagerProvider
+  </a>
+  
+    <nav class="md-nav" aria-label="TokenManagerProvider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.create_access_token" class="md-nav__link">
+    create_access_token()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.decode_jwt_token" class="md-nav__link">
+    decode_jwt_token()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.generate_jwt_token" class="md-nav__link">
+    generate_jwt_token()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.verify_access_token" class="md-nav__link">
+    verify_access_token()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -791,16 +875,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
       
       
       
@@ -809,7 +891,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Services
@@ -820,72 +902,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Auth Service
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../services/auth_services/" class="md-nav__link">
         Auth Service
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#src.services.auth_service" class="md-nav__link">
-    src.services.auth_service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.services.auth_service.AuthService" class="md-nav__link">
-    AuthService
-  </a>
-  
-    <nav class="md-nav" aria-label="AuthService">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#src.services.auth_service.AuthService.login_for_access_token" class="md-nav__link">
-    login_for_access_token()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -897,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user_services/" class="md-nav__link">
+      <a href="../../services/user_services/" class="md-nav__link">
         User Service
       </a>
     </li>
@@ -938,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interfaces/i_auth_service/" class="md-nav__link">
+      <a href="../../services/interfaces/i_auth_service/" class="md-nav__link">
         Auth Service Interfaces
       </a>
     </li>
@@ -952,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interfaces/i_user_service/" class="md-nav__link">
+      <a href="../../services/interfaces/i_user_service/" class="md-nav__link">
         User Service Interfaces
       </a>
     </li>
@@ -1338,23 +1359,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#src.services.auth_service" class="md-nav__link">
-    src.services.auth_service
+  <a href="#src.providers.token_manager_provider" class="md-nav__link">
+    src.providers.token_manager_provider
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.services.auth_service.AuthService" class="md-nav__link">
-    AuthService
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider" class="md-nav__link">
+    TokenManagerProvider
   </a>
   
-    <nav class="md-nav" aria-label="AuthService">
+    <nav class="md-nav" aria-label="TokenManagerProvider">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#src.services.auth_service.AuthService.login_for_access_token" class="md-nav__link">
-    login_for_access_token()
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.create_access_token" class="md-nav__link">
+    create_access_token()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.decode_jwt_token" class="md-nav__link">
+    decode_jwt_token()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.generate_jwt_token" class="md-nav__link">
+    generate_jwt_token()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.token_manager_provider.TokenManagerProvider.verify_access_token" class="md-nav__link">
+    verify_access_token()
   </a>
   
 </li>
@@ -1379,13 +1421,13 @@
                   
 
 
-<h1 id="auth-service">Auth Service</h1>
+<h1 id="token-manager-provider">Token Manager Provider</h1>
 
 
 <div class="doc doc-object doc-module">
 
 
-<a id="src.services.auth_service"></a>
+<a id="src.providers.token_manager_provider"></a>
   <div class="doc doc-contents first">
 
   
@@ -1403,24 +1445,19 @@
 
 
 
-<h2 id="src.services.auth_service.AuthService" class="doc doc-heading">
-        <code>AuthService</code>
+<h2 id="src.providers.token_manager_provider.TokenManagerProvider" class="doc doc-heading">
+        <code>TokenManagerProvider</code>
 
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
-  </span>
 
 </h2>
 
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="src.services.interfaces.i_auth_services.IAuthService" href="../interfaces/i_auth_service/#src.services.interfaces.i_auth_services.IAuthService">IAuthService</a></code></p>
+        Bases: <code><span title="src.providers.interfaces.itoken_manager.ITokenManagerProvider">ITokenManagerProvider</span></code></p>
 
   
-      <p>Implementation of the IAuthService interface for authentication.</p>
-<p>This class provides functionality for user authentication including verifying passwords and creating access tokens.</p>
+      <p>TokenManagerProvider implements the ITokenManagerProvider interface to generate and verify access tokens.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1434,13 +1471,13 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>db</code></td>
+          <td><code>settings</code></td>
           <td>
-                <code><span title="sqlalchemy.orm.Session">Session</span></code>
+                <code><a class="autorefs autorefs-internal" title="src.config.settings.Settings" href="../../configurations/settings/#src.config.settings.Settings">Settings</a></code>
           </td>
-          <td><p>SQLAlchemy Session instance</p></td>
+          <td><p>Settings object with the app's configuration.</p></td>
           <td>
-              <em>required</em>
+                <code>Settings()</code>
           </td>
         </tr>
     </tbody>
@@ -1457,33 +1494,23 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>db</code></td>
+          <td><code>settings</code></td>
           <td>
-                <code><span title="sqlalchemy.orm.Session">Session</span></code>
+                <code><a class="autorefs autorefs-internal" title="src.config.settings.Settings" href="../../configurations/settings/#src.config.settings.Settings">Settings</a></code>
           </td>
-          <td><p>SQLAlchemy Session instance</p></td>
-        </tr>
-        <tr>
-          <td><code>password_manager</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="src.providers.password_manager_provider.PasswordManagerProvider" href="../../providers/password_manager_provider/#src.providers.password_manager_provider.PasswordManagerProvider">PasswordManagerProvider</a></code>
-          </td>
-          <td><p>Password manager instance</p></td>
-        </tr>
-        <tr>
-          <td><code>token_manager</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="src.providers.token_manager_provider.TokenManagerProvider" href="../../providers/token_manager_provider/#src.providers.token_manager_provider.TokenManagerProvider">TokenManagerProvider</a></code>
-          </td>
-          <td><p>Token manager instance</p></td>
+          <td><p>Settings object with the app's configuration.</p></td>
         </tr>
     </tbody>
   </table>
 
 
         <details class="quote">
-          <summary>Source code in <code>src\services\auth_service.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+          <summary>Source code in <code>src\providers\token_manager_provider.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
@@ -1535,59 +1562,117 @@
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
-<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">AuthService</span><span class="p">(</span><span class="n">IAuthService</span><span class="p">):</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TokenManagerProvider</span><span class="p">(</span><span class="n">ITokenManagerProvider</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Implementation of the IAuthService interface for authentication.</span>
-
-<span class="sd">    This class provides functionality for user authentication including verifying passwords and creating access tokens.</span>
+<span class="sd">    TokenManagerProvider implements the ITokenManagerProvider interface to generate and verify access tokens.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        db: SQLAlchemy Session instance</span>
+<span class="sd">        settings (Settings): Settings object with the app&#39;s configuration.</span>
 
 <span class="sd">    Attributes:</span>
-<span class="sd">        db (Session): SQLAlchemy Session instance</span>
-<span class="sd">        password_manager (PasswordManagerProvider): Password manager instance</span>
-<span class="sd">        token_manager (TokenManagerProvider): Token manager instance</span>
+<span class="sd">        settings (Settings): Settings object with the app&#39;s configuration.</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">db</span><span class="p">:</span> <span class="n">Session</span>
-    <span class="n">password_manager</span> <span class="o">=</span> <span class="n">PasswordManagerProvider</span><span class="p">()</span>
-    <span class="n">token_manager</span> <span class="o">=</span> <span class="n">TokenManagerProvider</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">Settings</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span>
 
-    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_user_repository</span><span class="p">:</span> <span class="n">IUserRepository</span> <span class="o">=</span> <span class="n">UserRepository</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">login_for_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login_data</span><span class="p">:</span> <span class="n">LoginData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SuccessLogin</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">create_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Verifies user&#39;s email and password and returns a SuccessLogin object with an access token.</span>
+<span class="sd">        Create an access token with a given expiration time.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            login_data (LoginData): User login data including email and password.</span>
+<span class="sd">            data (dict): Dictionary with the data to encode in the token.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            SuccessLogin: A SuccessLogin object containing user data and access token.</span>
+<span class="sd">            str: Encoded JWT token.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">expirations</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ACCESS_TOKEN_EXPIRATION_MINUTES</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;exp&quot;</span><span class="p">:</span> <span class="n">expirations</span><span class="p">})</span>
+        <span class="n">token_jwt</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">token_jwt</span>
+
+    <span class="k">def</span> <span class="nf">generate_jwt_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_email</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a JWT token with a given expiration time.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            user_email (str): Email of the user to generate the token for.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Encoded JWT token.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="n">user_email</span><span class="p">}</span>
+        <span class="n">expirations</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">GENERAL_EXPIRES_IN_MINUTES</span><span class="p">)</span>
+        <span class="n">payload</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;exp&quot;</span><span class="p">:</span> <span class="n">expirations</span><span class="p">})</span>
+        <span class="n">encoded_jwt_token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">encoded_jwt_token</span>
+
+    <span class="k">def</span> <span class="nf">decode_jwt_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoded_jwt_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decode a JWT token.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            encoded_jwt_token (str): Encoded JWT token to decode.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Decoded JWT token.</span>
 
 <span class="sd">        Raises:</span>
-<span class="sd">            HTTPException: If the provided email or password is incorrect.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">email</span> <span class="o">=</span> <span class="n">login_data</span><span class="o">.</span><span class="n">email</span>
-        <span class="n">password</span> <span class="o">=</span> <span class="n">login_data</span><span class="o">.</span><span class="n">password</span>
-        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_user_repository</span><span class="o">.</span><span class="n">get_user_by_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
-                <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
-                <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Email or password does not match&quot;</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="n">valid_password</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">password_manager</span><span class="o">.</span><span class="n">hash_verify</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+<span class="sd">            HTTPException: If the token is invalid.</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_password</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
-                <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
-                <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Email or password does not match&quot;</span><span class="p">,</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">decoded_jwt_token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+                <span class="n">encoded_jwt_token</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">]</span>
             <span class="p">)</span>
-        <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">token_manager</span><span class="o">.</span><span class="n">create_access_token</span><span class="p">({</span><span class="s2">&quot;sub&quot;</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="p">})</span>
-        <span class="k">return</span> <span class="n">SuccessLogin</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">access_token</span><span class="o">=</span><span class="n">access_token</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">decoded_jwt_token</span>
+        <span class="k">except</span> <span class="n">JWTError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Invalid token&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">verify_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify if an access token is valid.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            token (str): Access token to verify.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: User id encoded in the access token.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">charge</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">charge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sub&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1607,15 +1692,15 @@
 
 
 
-<h3 id="src.services.auth_service.AuthService.login_for_access_token" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">login_for_access_token</span><span class="p">(</span><span class="n">login_data</span><span class="p">)</span></code>
+<h3 id="src.providers.token_manager_provider.TokenManagerProvider.create_access_token" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">create_access_token</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
 
 </h3>
 
 
   <div class="doc doc-contents ">
   
-      <p>Verifies user's email and password and returns a SuccessLogin object with an access token.</p>
+      <p>Create an access token with a given expiration time.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1629,11 +1714,11 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>login_data</code></td>
+          <td><code>data</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="src.schemas.login_schema.LoginData" href="../../schemas/login_schema/#src.schemas.login_schema.LoginData">LoginData</a></code>
+                <code>dict</code>
           </td>
-          <td><p>User login data including email and password.</p></td>
+          <td><p>Dictionary with the data to encode in the token.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -1651,10 +1736,105 @@
     </thead>
     <tbody>
         <tr>
-<td><code>SuccessLogin</code></td>          <td>
-                <code><a class="autorefs autorefs-internal" title="src.schemas.login_schema.SuccessLogin" href="../../schemas/login_schema/#src.schemas.login_schema.SuccessLogin">SuccessLogin</a></code>
+<td><code>str</code></td>          <td>
+                <code>str</code>
           </td>
-          <td><p>A SuccessLogin object containing user data and access token.</p></td>
+          <td><p>Encoded JWT token.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>src\providers\token_manager_provider.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">create_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create an access token with a given expiration time.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (dict): Dictionary with the data to encode in the token.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Encoded JWT token.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">expirations</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ACCESS_TOKEN_EXPIRATION_MINUTES</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;exp&quot;</span><span class="p">:</span> <span class="n">expirations</span><span class="p">})</span>
+    <span class="n">token_jwt</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">token_jwt</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.providers.token_manager_provider.TokenManagerProvider.decode_jwt_token" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">decode_jwt_token</span><span class="p">(</span><span class="n">encoded_jwt_token</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Decode a JWT token.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>encoded_jwt_token</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Encoded JWT token to decode.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>dict</code></td>          <td>
+                <code>dict[str, any]</code>
+          </td>
+          <td><p>Decoded JWT token.</p></td>
         </tr>
     </tbody>
   </table>
@@ -1672,19 +1852,119 @@
           <td>
                 <code><span title="fastapi.HTTPException">HTTPException</span></code>
           </td>
-          <td><p>If the provided email or password is incorrect.</p></td>
+          <td><p>If the token is invalid.</p></td>
         </tr>
     </tbody>
   </table>
 
       <details class="quote">
-        <summary>Source code in <code>src\services\auth_service.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
+        <summary>Source code in <code>src\providers\token_manager_provider.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">decode_jwt_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoded_jwt_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decode a JWT token.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        encoded_jwt_token (str): Encoded JWT token to decode.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Decoded JWT token.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HTTPException: If the token is invalid.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">decoded_jwt_token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+            <span class="n">encoded_jwt_token</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">decoded_jwt_token</span>
+    <span class="k">except</span> <span class="n">JWTError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Invalid token&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.providers.token_manager_provider.TokenManagerProvider.generate_jwt_token" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_jwt_token</span><span class="p">(</span><span class="n">user_email</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate a JWT token with a given expiration time.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>user_email</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Email of the user to generate the token for.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>Encoded JWT token.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>src\providers\token_manager_provider.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
@@ -1699,45 +1979,111 @@
 <span class="normal">55</span>
 <span class="normal">56</span>
 <span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">login_for_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login_data</span><span class="p">:</span> <span class="n">LoginData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SuccessLogin</span><span class="p">:</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_jwt_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_email</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Verifies user&#39;s email and password and returns a SuccessLogin object with an access token.</span>
+<span class="sd">    Generate a JWT token with a given expiration time.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        login_data (LoginData): User login data including email and password.</span>
+<span class="sd">        user_email (str): Email of the user to generate the token for.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        SuccessLogin: A SuccessLogin object containing user data and access token.</span>
+<span class="sd">        str: Encoded JWT token.</span>
 
-<span class="sd">    Raises:</span>
-<span class="sd">        HTTPException: If the provided email or password is incorrect.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">email</span> <span class="o">=</span> <span class="n">login_data</span><span class="o">.</span><span class="n">email</span>
-    <span class="n">password</span> <span class="o">=</span> <span class="n">login_data</span><span class="o">.</span><span class="n">password</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_user_repository</span><span class="o">.</span><span class="n">get_user_by_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
-            <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
-            <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Email or password does not match&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="n">valid_password</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">password_manager</span><span class="o">.</span><span class="n">hash_verify</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="n">user_email</span><span class="p">}</span>
+    <span class="n">expirations</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">GENERAL_EXPIRES_IN_MINUTES</span><span class="p">)</span>
+    <span class="n">payload</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;exp&quot;</span><span class="p">:</span> <span class="n">expirations</span><span class="p">})</span>
+    <span class="n">encoded_jwt_token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">encoded_jwt_token</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_password</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
-            <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
-            <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Email or password does not match&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">token_manager</span><span class="o">.</span><span class="n">create_access_token</span><span class="p">({</span><span class="s2">&quot;sub&quot;</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="p">})</span>
-    <span class="k">return</span> <span class="n">SuccessLogin</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">access_token</span><span class="o">=</span><span class="n">access_token</span><span class="p">)</span>
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.providers.token_manager_provider.TokenManagerProvider.verify_access_token" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">verify_access_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Verify if an access token is valid.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>token</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Access token to verify.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>User id encoded in the access token.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>src\providers\token_manager_provider.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">verify_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Verify if an access token is valid.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        token (str): Access token to verify.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: User id encoded in the access token.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">charge</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">ALGORITHM</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">charge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sub&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
