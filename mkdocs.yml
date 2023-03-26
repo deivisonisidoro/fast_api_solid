@@ -3,15 +3,15 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: purple
+      primary: blue
       toggle:
         icon: material/weather-night
-        name: Weather Night
+        name: Night Mode
     - scheme: slate
-      primary: deep purple
+      primary: deep blue
       toggle:
         icon: material/weather-sunny
-        name: Weather Sunny
+        name: Light Mode
 
 markdown_extensions:
   - pymdownx.tasklist
