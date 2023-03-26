@@ -14,10 +14,10 @@ class TestUserRepository:
             user_data (dict): Dictionary containing user data.
 
         Expected Results:
-            The method should create a user in the database with the provided data.
-            The method should return the created user object with the generated ID.
-            The created user object should have the same name and email as the provided user data.
-            The password of the created user object should be hashed and not equal to the provided password.
+            - The method should create a user in the database with the provided data.
+            - The method should return the created user object with the generated ID.
+            - The created user object should have the same name and email as the provided user data.
+            - The password of the created user object should be hashed and not equal to the provided password.
         """
         user_repo = UserRepository(db)
         user = user_repo.create_user(UserCreate(**user_data))
@@ -35,8 +35,8 @@ class TestUserRepository:
             user_data (dict): Dictionary containing user data.
 
         Expected Results:
-            The method should retrieve the created user object by ID from the database.
-            The retrieved user object should have the same name, email, and password as the created user object.
+            - The method should retrieve the created user object by ID from the database.
+            - The retrieved user object should have the same name, email, and password as the created user object.
         """
         user_repo = UserRepository(db)
         user = user_repo.create_user(UserCreate(**user_data))
@@ -56,8 +56,8 @@ class TestUserRepository:
             user_data (dict): Dictionary containing user data.
 
         Expected Results:
-            The method should retrieve the created user object by email from the database.
-            The retrieved user object should have the same name, email, and password as the created user object.
+            - The method should retrieve the created user object by email from the database.
+            - The retrieved user object should have the same name, email, and password as the created user object.
         """
         user_repo = UserRepository(db)
         user = user_repo.create_user(UserCreate(**user_data))
@@ -77,9 +77,9 @@ class TestUserRepository:
             user_data (dict): Dictionary containing user data.
 
         Expected Results:
-            The method should retrieve all created user objects from the database.
-            The method should return a list of user objects.
-            The length of the list should be equal to the number of created users.
+            - The method should retrieve all created user objects from the database.
+            - The method should return a list of user objects.
+            - The length of the list should be equal to the number of created users.
         """
         user_data_2 = {"name": "Jane Doe", "email": "janedoe@example.com", "password": "password456"}
         user_repo = UserRepository(db)
@@ -97,9 +97,10 @@ class TestUserRepository:
             user_data (dict): Dictionary containing user data
 
         Expected Results:
-            The updated user should have the same ID as the original user, and its
+            - The updated user should have the same ID as the original user, and its
             name and email should be updated to the values in the updated_user_data
-            dictionary. The updated user's password should not be equal to the
+            dictionary.
+            - The updated user's password should not be equal to the
             password in updated_user_data.
         """
         user_repo = UserRepository(db)
