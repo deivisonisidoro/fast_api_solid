@@ -1,0 +1,3 @@
+# Test Aut Routers
+
+::: src.tests.routers.test_auth_routers

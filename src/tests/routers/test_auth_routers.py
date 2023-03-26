@@ -12,6 +12,10 @@ from src.schemas.user_schema import UserCreate
 
 
 class TestAuthController:
+    """
+    Test suite for the AuthController class.
+    """
+
     @patch.object(TokenManagerProvider, "create_access_token")
     def test_login_for_access_token_success(
         self,
@@ -20,6 +24,20 @@ class TestAuthController:
         client: TestClient,
         user_data: dict,
     ):
+        """
+        Test successful user login, which returns an access token.
+
+        Args:
+            mock_create_access_token (MagicMock): A mocked version of the create_access_token method from
+                TokenManagerProvider.
+            db (Session): A SQLAlchemy session.
+            client (TestClient): A TestClient instance from FastAPI.
+            user_data (dict): A dictionary containing mock user data.
+
+        Expected Results:
+            The test should pass if the HTTP response status code is 200 and the response body contains an
+            access token.
+        """
         mock_create_access_token.return_value = "access_token"
         user_service = UserRepository(db)
         user_service.create_user(UserCreate(**user_data))
@@ -34,6 +52,18 @@ class TestAuthController:
         client: TestClient,
         user_data: dict,
     ):
+        """
+        Test failed user login, which returns an error message.
+
+        Args:
+            db (Session): A SQLAlchemy session.
+            client (TestClient): A TestClient instance from FastAPI.
+            user_data (dict): A dictionary containing mock user data.
+
+        Expected Results:
+            The test should pass if the HTTP response status code is 400 and the response body contains an
+            error message.
+        """
         user_service = UserRepository(db)
         user_service.create_user(UserCreate(**user_data))
 
@@ -50,6 +80,19 @@ class TestAuthController:
         client: TestClient,
         user_data: dict,
     ):
+        """
+        Test successful retrieval of user profile.
+
+        Args:
+            mock_hash_verify (MagicMock): A mocked version of the hash_verify method from PasswordManagerProvider.
+            db (Session): A SQLAlchemy session.
+            client (TestClient): A TestClient instance from FastAPI.
+            user_data (dict): A dictionary containing mock user data.
+
+        Expected Results:
+            The test should pass if the HTTP response status code is 200 and the response body contains the user's
+            profile data.
+        """
         mock_hash_verify.return_value = True
         user_service = UserRepository(db)
         user_service.create_user(UserCreate(**user_data))
@@ -65,6 +108,18 @@ class TestAuthController:
         client: TestClient,
         user_data: dict,
     ):
+        """
+        Test failed retrieval of user profile due to invalid access token.
+
+        Args:
+            db (Session): A SQLAlchemy session.
+            client (TestClient): A TestClient instance from FastAPI.
+            user_data (dict): A dictionary containing mock user data.
+
+        Expected Results:
+            The test should pass if the HTTP response status code is 401 and the response body contains an error message
+            indicating that the token is not authorized.
+        """
         user_service = UserRepository(db)
         user_service.create_user(UserCreate(**user_data))
 
