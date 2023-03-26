@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../../user_services/">
+        <link rel="prev" href="../email_provider/">
       
       
-        <link rel="next" href="../i_user_service/">
+        <link rel="next" href="../token_manager_provider/">
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>Auth Service Interfaces - Fast API SOLID Docs</title>
+        <title>Password Manager Provider - Fast API SOLID Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -42,11 +42,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#auth-service-interfaces" class="md-skip">
+        <a href="#password-manager-provider" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Fast API SOLID Docs" class="md-header__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
+    <a href="../../.." title="Fast API SOLID Docs" class="md-header__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Auth Service Interfaces
+              Password Manager Provider
             
           </span>
         </div>
@@ -164,7 +164,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Fast API SOLID Docs" class="md-nav__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
+    <a href="../../.." title="Fast API SOLID Docs" class="md-nav__button md-logo" aria-label="Fast API SOLID Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -183,7 +183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         FastAPI SOLID Docs: Building Scalable Python Web Apps
       </a>
     </li>
@@ -254,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configurations/database/" class="md-nav__link">
+      <a href="../../configurations/database/" class="md-nav__link">
         Database
       </a>
     </li>
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configurations/mail/" class="md-nav__link">
+      <a href="../../configurations/mail/" class="md-nav__link">
         Mail
       </a>
     </li>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configurations/settings/" class="md-nav__link">
+      <a href="../../configurations/settings/" class="md-nav__link">
         Settings
       </a>
     </li>
@@ -330,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../entities/administrator_entity/" class="md-nav__link">
+      <a href="../../entities/administrator_entity/" class="md-nav__link">
         Administrator Entity
       </a>
     </li>
@@ -344,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../entities/professor_entity/" class="md-nav__link">
+      <a href="../../entities/professor_entity/" class="md-nav__link">
         Professor Entity
       </a>
     </li>
@@ -358,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../entities/students_entity/" class="md-nav__link">
+      <a href="../../entities/students_entity/" class="md-nav__link">
         Students Entity
       </a>
     </li>
@@ -372,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../entities/user_entity/" class="md-nav__link">
+      <a href="../../entities/user_entity/" class="md-nav__link">
         User Entity
       </a>
     </li>
@@ -391,14 +391,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -407,7 +409,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           Providers
@@ -420,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/email_provider/" class="md-nav__link">
+      <a href="../email_provider/" class="md-nav__link">
         Email Provider
       </a>
     </li>
@@ -432,11 +434,79 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../providers/password_manager_provider/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Password Manager Provider
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Password Manager Provider
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.providers.password_manager_provider" class="md-nav__link">
+    src.providers.password_manager_provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.providers.password_manager_provider.PasswordManagerProvider" class="md-nav__link">
+    PasswordManagerProvider
+  </a>
+  
+    <nav class="md-nav" aria-label="PasswordManagerProvider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.password_manager_provider.PasswordManagerProvider.hash_generate" class="md-nav__link">
+    hash_generate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.password_manager_provider.PasswordManagerProvider.hash_verify" class="md-nav__link">
+    hash_verify()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -448,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/token_manager_provider/" class="md-nav__link">
+      <a href="../token_manager_provider/" class="md-nav__link">
         Token Manager Provider
       </a>
     </li>
@@ -496,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../repositories/user_repository/" class="md-nav__link">
+      <a href="../../repositories/user_repository/" class="md-nav__link">
         User Repository
       </a>
     </li>
@@ -537,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../repositories/interfaces/i_user_repository/" class="md-nav__link">
+      <a href="../../repositories/interfaces/i_user_repository/" class="md-nav__link">
         User Repository Interface
       </a>
     </li>
@@ -592,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../routers/auth_routers/" class="md-nav__link">
+      <a href="../../routers/auth_routers/" class="md-nav__link">
         Auth Routers
       </a>
     </li>
@@ -606,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../routers/routers/" class="md-nav__link">
+      <a href="../../routers/routers/" class="md-nav__link">
         Routers
       </a>
     </li>
@@ -620,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../routers/user_routers/" class="md-nav__link">
+      <a href="../../routers/user_routers/" class="md-nav__link">
         User Routers
       </a>
     </li>
@@ -661,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../routers/interfaces/i_auth_routers/" class="md-nav__link">
+      <a href="../../routers/interfaces/i_auth_routers/" class="md-nav__link">
         Auth Router Interface
       </a>
     </li>
@@ -675,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../routers/interfaces/i_user_routers/" class="md-nav__link">
+      <a href="../../routers/interfaces/i_user_routers/" class="md-nav__link">
         User Router Interface
       </a>
     </li>
@@ -730,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../schemas/email_message_schema/" class="md-nav__link">
+      <a href="../../schemas/email_message_schema/" class="md-nav__link">
         Email Message Schema
       </a>
     </li>
@@ -744,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../schemas/login_schema/" class="md-nav__link">
+      <a href="../../schemas/login_schema/" class="md-nav__link">
         Login Schema
       </a>
     </li>
@@ -758,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../schemas/token_schema/" class="md-nav__link">
+      <a href="../../schemas/token_schema/" class="md-nav__link">
         Token Schema
       </a>
     </li>
@@ -772,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../schemas/user_schema/" class="md-nav__link">
+      <a href="../../schemas/user_schema/" class="md-nav__link">
         User schema
       </a>
     </li>
@@ -791,16 +861,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
       
       
       
@@ -809,7 +877,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Services
@@ -822,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../auth_services/" class="md-nav__link">
+      <a href="../../services/auth_services/" class="md-nav__link">
         Auth Service
       </a>
     </li>
@@ -836,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_services/" class="md-nav__link">
+      <a href="../../services/user_services/" class="md-nav__link">
         User Service
       </a>
     </li>
@@ -848,16 +916,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3" >
       
       
       
@@ -866,7 +932,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_7_3">
           <span class="md-nav__icon md-icon"></span>
           Interfaces
@@ -877,72 +943,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Auth Service Interfaces
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../services/interfaces/i_auth_service/" class="md-nav__link">
         Auth Service Interfaces
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#src.services.interfaces.i_auth_services" class="md-nav__link">
-    src.services.interfaces.i_auth_services
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.services.interfaces.i_auth_services.IAuthService" class="md-nav__link">
-    IAuthService
-  </a>
-  
-    <nav class="md-nav" aria-label="IAuthService">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#src.services.interfaces.i_auth_services.IAuthService.login_for_access_token" class="md-nav__link">
-    login_for_access_token()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -954,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../i_user_service/" class="md-nav__link">
+      <a href="../../services/interfaces/i_user_service/" class="md-nav__link">
         User Service Interfaces
       </a>
     </li>
@@ -1036,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/entities/test_administrator_entity/" class="md-nav__link">
+      <a href="../../tests/entities/test_administrator_entity/" class="md-nav__link">
         Test Administrator Entity
       </a>
     </li>
@@ -1050,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/entities/test_professor_entity/" class="md-nav__link">
+      <a href="../../tests/entities/test_professor_entity/" class="md-nav__link">
         Test Professor Entity
       </a>
     </li>
@@ -1064,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/entities/test_student_entity/" class="md-nav__link">
+      <a href="../../tests/entities/test_student_entity/" class="md-nav__link">
         Test Student Entity
       </a>
     </li>
@@ -1078,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/entities/test_user_entity/" class="md-nav__link">
+      <a href="../../tests/entities/test_user_entity/" class="md-nav__link">
         Test User Entity
       </a>
     </li>
@@ -1126,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/repositories/test_user_repository/" class="md-nav__link">
+      <a href="../../tests/repositories/test_user_repository/" class="md-nav__link">
         Test User Entity
       </a>
     </li>
@@ -1174,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/routers/test_auth_routers/" class="md-nav__link">
+      <a href="../../tests/routers/test_auth_routers/" class="md-nav__link">
         Test Auth Routers
       </a>
     </li>
@@ -1188,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/routers/test_user_routers/" class="md-nav__link">
+      <a href="../../tests/routers/test_user_routers/" class="md-nav__link">
         Test User Routers
       </a>
     </li>
@@ -1236,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/schemas/test_user_schemas/" class="md-nav__link">
+      <a href="../../tests/schemas/test_user_schemas/" class="md-nav__link">
         Test User Schemas
       </a>
     </li>
@@ -1299,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../diagrams/entities_diagram/" class="md-nav__link">
+      <a href="../../../diagrams/entities_diagram/" class="md-nav__link">
         Entities
       </a>
     </li>
@@ -1340,23 +1345,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#src.services.interfaces.i_auth_services" class="md-nav__link">
-    src.services.interfaces.i_auth_services
+  <a href="#src.providers.password_manager_provider" class="md-nav__link">
+    src.providers.password_manager_provider
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.services.interfaces.i_auth_services.IAuthService" class="md-nav__link">
-    IAuthService
+  <a href="#src.providers.password_manager_provider.PasswordManagerProvider" class="md-nav__link">
+    PasswordManagerProvider
   </a>
   
-    <nav class="md-nav" aria-label="IAuthService">
+    <nav class="md-nav" aria-label="PasswordManagerProvider">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#src.services.interfaces.i_auth_services.IAuthService.login_for_access_token" class="md-nav__link">
-    login_for_access_token()
+  <a href="#src.providers.password_manager_provider.PasswordManagerProvider.hash_generate" class="md-nav__link">
+    hash_generate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.providers.password_manager_provider.PasswordManagerProvider.hash_verify" class="md-nav__link">
+    hash_verify()
   </a>
   
 </li>
@@ -1381,13 +1393,13 @@
                   
 
 
-<h1 id="auth-service-interfaces">Auth Service Interfaces</h1>
+<h1 id="password-manager-provider">Password Manager Provider</h1>
 
 
 <div class="doc doc-object doc-module">
 
 
-<a id="src.services.interfaces.i_auth_services"></a>
+<a id="src.providers.password_manager_provider"></a>
   <div class="doc doc-contents first">
 
   
@@ -1405,23 +1417,19 @@
 
 
 
-<h2 id="src.services.interfaces.i_auth_services.IAuthService" class="doc doc-heading">
-        <code>IAuthService</code>
+<h2 id="src.providers.password_manager_provider.PasswordManagerProvider" class="doc doc-heading">
+        <code>PasswordManagerProvider</code>
 
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
-  </span>
 
 </h2>
 
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><span title="abc.ABC">ABC</span></code></p>
+        Bases: <code><span title="src.providers.interfaces.ipassword_manager.IPasswordManagerProvider">IPasswordManagerProvider</span></code></p>
 
   
-      <p>Abstract base class for authentication services.</p>
+      <p>Implementation of IPasswordManagerProvider that uses PassLib to hash and verify passwords.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1435,42 +1443,26 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>db</code></td>
+          <td><code>pwd_context</code></td>
           <td>
-                <code><span title="sqlalchemy.orm.Session">Session</span></code>
+                <code><span title="passlib.context.CryptContext">CryptContext</span></code>
           </td>
-          <td><p>SQLAlchemy Session instance</p></td>
+          <td><p>An instance of passlib's CryptContext. Default is a CryptContext instance using the bcrypt scheme.</p></td>
           <td>
-              <em>required</em>
+                <code>CryptContext(schemes=[&#39;bcrypt&#39;])</code>
           </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>db</code></td>
-          <td>
-                <code><span title="sqlalchemy.orm.Session">Session</span></code>
-          </td>
-          <td><p>SQLAlchemy Session instance</p></td>
         </tr>
     </tbody>
   </table>
 
 
         <details class="quote">
-          <summary>Source code in <code>src\services\interfaces\i_auth_services.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+          <summary>Source code in <code>src\providers\password_manager_provider.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
@@ -1493,30 +1485,48 @@
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">IAuthService</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Abstract base class for authentication services.</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PasswordManagerProvider</span><span class="p">(</span><span class="n">IPasswordManagerProvider</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implementation of IPasswordManagerProvider that uses PassLib to hash and verify passwords.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        db: SQLAlchemy Session instance</span>
-
-<span class="sd">    Attributes:</span>
-<span class="sd">        db (Session): SQLAlchemy Session instance</span>
+<span class="sd">        pwd_context (CryptContext): An instance of passlib&#39;s CryptContext. Default is a CryptContext instance using the bcrypt scheme.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">db</span><span class="p">:</span> <span class="n">Session</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pwd_context</span><span class="p">:</span> <span class="n">CryptContext</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span><span class="n">schemes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bcrypt&quot;</span><span class="p">])):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pwd_context</span> <span class="o">=</span> <span class="n">pwd_context</span>
 
-    <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">login_for_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login_data</span><span class="p">:</span> <span class="n">LoginData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SuccessLogin</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate user login credentials and return an access token.</span>
+    <span class="k">def</span> <span class="nf">hash_generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Hashes a password string.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            login_data: LoginData schema containing user login credentials</span>
+<span class="sd">            text (str): The password string to be hashed.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            SuccessLogin schema containing user information and access token</span>
+<span class="sd">            str: The hashed password.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">hash_verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verifies a password string against a hash.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            text (str): The password string to be verified.</span>
+<span class="sd">            hash: The hash string to be compared against.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the password matches the hash, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1536,19 +1546,15 @@
 
 
 
-<h3 id="src.services.interfaces.i_auth_services.IAuthService.login_for_access_token" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">login_for_access_token</span><span class="p">(</span><span class="n">login_data</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
+<h3 id="src.providers.password_manager_provider.PasswordManagerProvider.hash_generate" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">hash_generate</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></code>
 
 </h3>
 
 
   <div class="doc doc-contents ">
   
-      <p>Validate user login credentials and return an access token.</p>
+      <p>Hashes a password string.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1562,11 +1568,11 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>login_data</code></td>
+          <td><code>text</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="src.schemas.login_schema.LoginData" href="../../../schemas/login_schema/#src.schemas.login_schema.LoginData">LoginData</a></code>
+                <code>str</code>
           </td>
-          <td><p>LoginData schema containing user login credentials</p></td>
+          <td><p>The password string to be hashed.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -1578,43 +1584,139 @@
   <table>
     <thead>
       <tr>
-        <th>Type</th>
+<th>Name</th>        <th>Type</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
         <tr>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="src.schemas.login_schema.SuccessLogin" href="../../../schemas/login_schema/#src.schemas.login_schema.SuccessLogin">SuccessLogin</a></code>
+<td><code>str</code></td>          <td>
+                <code>str</code>
           </td>
-          <td><p>SuccessLogin schema containing user information and access token</p></td>
+          <td><p>The hashed password.</p></td>
         </tr>
     </tbody>
   </table>
 
       <details class="quote">
-        <summary>Source code in <code>src\services\interfaces\i_auth_services.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
+        <summary>Source code in <code>src\providers\password_manager_provider.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">hash_generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Hashes a password string.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        text (str): The password string to be hashed.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The hashed password.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.providers.password_manager_provider.PasswordManagerProvider.hash_verify" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">hash_verify</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Verifies a password string against a hash.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>text</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The password string to be verified.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>hash</code></td>
+          <td>
+          </td>
+          <td><p>The hash string to be compared against.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>bool</code></td>          <td>
+                <code>bool</code>
+          </td>
+          <td><p>True if the password matches the hash, False otherwise.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>src\providers\password_manager_provider.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
-<span class="k">def</span> <span class="nf">login_for_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login_data</span><span class="p">:</span> <span class="n">LoginData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SuccessLogin</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate user login credentials and return an access token.</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">hash_verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Verifies a password string against a hash.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        login_data: LoginData schema containing user login credentials</span>
+<span class="sd">        text (str): The password string to be verified.</span>
+<span class="sd">        hash: The hash string to be compared against.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        SuccessLogin schema containing user information and access token</span>
+<span class="sd">        bool: True if the password matches the hash, False otherwise.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1674,10 +1776,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js"></script>
       
