@@ -1,12 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
 from src.config.database import get_db
+from src.middlewares.authentication_middleware import AuthenticationMiddleware
 from src.schemas.login_schema import LoginData, SuccessLogin
 from src.schemas.user_schema import UserIn, UserOut
 from src.services.auth_service import AuthService
 from src.services.interfaces.i_auth_services import IAuthService
-from src.utils.auths_utils import get_user_logged_in
 
 from .interfaces.iauth_routers import IAuthRouters
 
@@ -51,7 +51,7 @@ class AuthRouters(IAuthRouters):
 
     @staticmethod
     @router.get("/profile", status_code=status.HTTP_200_OK, response_model=UserOut)
-    async def get_profile(user: UserIn = Depends(get_user_logged_in)):
+    async def get_profile(user: UserIn = Depends(AuthenticationMiddleware())):
         """
         Get a user's profile information.
 

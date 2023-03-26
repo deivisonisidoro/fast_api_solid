@@ -10,26 +10,22 @@ from src.repositories.user_repository import UserRepository
 oauth2_schema = OAuth2PasswordBearer(tokenUrl="token")
 
 
-def verify_token(token: str):
-    try:
-        email = TokenManagerProvider().verify_access_token(token)
-    except JWTError:
-        return None
-    return email
+class AuthenticationMiddleware:
+    def verify_token(self, token: str):
+        try:
+            email = TokenManagerProvider().verify_access_token(token)
+        except JWTError:
+            return None
+        return email
 
+    def get_user_by_email(self, email: str, db: Session):
+        return UserRepository(db).get_user_by_email(email)
 
-def get_user_by_email(email: str, db: Session):
-    return UserRepository(db).get_user_by_email(email)
-
-
-def get_user_logged_in(
-    token: str = Depends(oauth2_schema),
-    db: Session = Depends(get_db),
-):
-    email = verify_token(token)
-    if not email:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token is not authorized")
-    user = get_user_by_email(email, db)
-    if not user:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not found")
-    return user
+    async def __call__(self, token: str = Depends(oauth2_schema), db: Session = Depends(get_db)):
+        email = self.verify_token(token)
+        if not email:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token is not authorized")
+        user = self.get_user_by_email(email, db)
+        if not user:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not found")
+        return user
