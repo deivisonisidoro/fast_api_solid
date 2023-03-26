@@ -139,7 +139,7 @@ class TestUserService:
         with pytest.raises(HTTPException):
             service.get_user(result.id)
 
-    def test_reset_password(db: Session, user_data: UserCreate, mocker):
+    def test_reset_password(self, db: Session, user_data: UserCreate, mocker):
         """
         Test resetting a user's password.
 
