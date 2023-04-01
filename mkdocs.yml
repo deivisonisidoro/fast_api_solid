@@ -1,4 +1,6 @@
 site_name: Fast API SOLID Docs
+repo_url: https://github.com/deivisonisidoro/fast_api_solid
+repo_name: deivisonisidoro/fast_api_solid
 theme:
   name: material
   palette:
